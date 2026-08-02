@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <rect width="800" height="450" fill="#080C14" rx="16"/>
+  <rect x="60" y="40" width="680" height="370" fill="#0F172A" stroke="#1E293B" stroke-width="2" rx="12"/>
+  <rect x="60" y="40" width="680" height="44" fill="#162032" rx="12"/>
+  <circle cx="90" cy="62" r="6" fill="#EF4444"/>
+  <circle cx="110" cy="62" r="6" fill="#F59E0B"/>
+  <circle cx="130" cy="62" r="6" fill="#10B981"/>
+  <text x="400" y="67" fill="#60A5FA" font-family="'Space Grotesk', sans-serif" font-size="14" font-weight="700" text-anchor="middle">NEXUS Dynamic Portfolio Engine</text>
+  
+  <text x="100" y="130" fill="#F472B6" font-family="monospace" font-size="16">const <tspan fill="#60A5FA">portfolio</tspan> = {</text>
+  <text x="130" y="165" fill="#38BDF8" font-family="monospace" font-size="16">architecture: <tspan fill="#34D399">"Modular JS Data &amp; Render Engine"</tspan>,</text>
+  <text x="130" y="200" fill="#38BDF8" font-family="monospace" font-size="16">framework: <tspan fill="#FBBF24">"Zero External Overhead / Pure Vanilla"</tspan>,</text>
+  <text x="130" y="235" fill="#38BDF8" font-family="monospace" font-size="16">sections: [<tspan fill="#34D399">"Hero"</tspan>, <tspan fill="#34D399">"About"</tspan>, <tspan fill="#34D399">"Skills"</tspan>, <tspan fill="#34D399">"Projects"</tspan>, <tspan fill="#34D399">"Journey"</tspan>],</text>
+  <text x="130" y="270" fill="#38BDF8" font-family="monospace" font-size="16">design: <tspan fill="#34D399">"Clean Engineering &amp; Glassmorphism"</tspan></text>
+  <text x="100" y="305" fill="#F472B6" font-family="monospace" font-size="16">};</text>
+  
+  <rect x="100" y="335" width="220" height="40" fill="#3B82F6" rx="8"/>
+  <text x="210" y="360" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="600" text-anchor="middle">100% Dynamic Render</text>
+</svg>

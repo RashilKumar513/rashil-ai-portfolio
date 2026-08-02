@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- =========================
+         META TAGS & SEO
+    ========================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RASHIL.AI - Official Developer Portfolio of Rashil Kumar Suresh Kumar. AI & Full-Stack Engineer specializing in MERN stack, Gemini API, RAG vector systems, and OWASP security.">
+    <meta name="keywords" content="RASHIL.AI, Portfolio, Full Stack Developer, Software Engineer, Web Developer, AI Engineering, React, Node.js, Python, MySQL">
+    <meta name="author" content="RASHIL KUMAR SURESH KUMAR">
+    <meta property="og:title" content="RASHIL.AI | Rashil Kumar Suresh Kumar — AI & Full-Stack Portfolio">
+    <meta property="og:description" content="Official AI & Full-Stack Developer Portfolio of Rashil Kumar Suresh Kumar. 12 Verified Internships, 100% Attendance, 7.7 GPA.">
+    <meta property="og:type" content="website">
+
+    <title>RASHIL.AI | Rashil Kumar Suresh Kumar — AI & Full-Stack Portfolio</title>
+
+    <!-- =========================
+         GOOGLE FONTS
+    ========================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Silkscreen&family=Space+Grotesk:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- =========================
+         CSS STYLESHEETS
+    ========================== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+    <!-- =========================
+         FUTURISTIC INTERACTIVE CYBER CURSOR
+    ========================== -->
+    <div id="cyber-cursor-dot" class="cyber-cursor-dot"></div>
+    <div id="cyber-cursor-ring" class="cyber-cursor-ring"></div>
+
+    <!-- =========================
+         FUTURISTIC SYSTEM PRELOADER SCREEN
+    ========================== -->
+    <div id="system-preloader" class="system-preloader">
+        <div class="preloader-backdrop-glow"></div>
+        <div class="preloader-content">
+            <div class="preloader-logo">
+                RASHIL<span class="nav-logo-badge">.AI</span>
+            </div>
+            
+            <div class="preloader-status-tag">
+                <span class="pulse-dot"></span> INITIALIZING SYSTEM ARCHITECTURE
+            </div>
+
+            <div class="preloader-counter-box">
+                <span id="preloader-counter" class="preloader-counter-num">0</span><span class="preloader-percent">%</span>
+            </div>
+
+            <div class="preloader-bar-wrapper">
+                <div id="preloader-bar" class="preloader-bar-fill"></div>
+            </div>
+
+            <div class="preloader-terminal-feed" id="preloader-terminal">
+                <div class="terminal-line active">> INITIALIZING QUANTUM AURORA ENGINE...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================
+         LIVE AMBIENT AURORA CANVAS BACKGROUND
+    ========================== -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- =========================
+         WORLD-FIRST 3D SOLAR SYSTEM GALAXY OVERLAY
+    ========================== -->
+    <div id="galaxy-3d-overlay" class="galaxy-3d-overlay" style="display: none;">
+        <canvas id="galaxy-3d-canvas"></canvas>
+        <div class="galaxy-hud-header">
+            <div class="hud-status-badge"><span class="pulse-dot"></span> INTERACTIVE 3D SOLAR SYSTEM · CLICK PLANET TO WARP</div>
+            <button class="galaxy-hud-close" onclick="toggleGalaxy3DMode()">✕ CLOSE GALAXY VIEW</button>
+        </div>
+    </div>
+
+    <!-- =========================
+         FLOATING VERTICAL TEXT SOCIAL RAIL (PEC HACKS STYLE)
+    ========================== -->
+    <div class="vertical-social-rail">
+        <a href="https://linkedin.com/in/rashil-kumar-suresh-kumar" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+        <a href="https://github.com/RashilKumar513" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a href="mailto:rashidrashil2006@gmail.com">EMAIL</a>
+    </div>
+
+    <!-- =========================
+         HEADER & NAVIGATION
+    ========================== -->
+    <header class="header">
+        <nav class="navbar container" aria-label="Main Navigation">
+            <a href="#" class="nav-logo" onclick="event.preventDefault(); scrollToSection('hero')">
+                RASHIL<span class="nav-logo-badge">.AI</span>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <!-- Navigation Links with Offset Smooth Scroll -->
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero" class="nav-link active" onclick="event.preventDefault(); scrollToSection('hero')" data-planet="nexara"><span class="nav-planet-dot" style="--planet-color: #F59E0B"></span>NEXARA</a></li>
+                <li><a href="#about" class="nav-link" onclick="event.preventDefault(); scrollToSection('about')" data-planet="velithon"><span class="nav-planet-dot" style="--planet-color: #34D399"></span>VELITHON</a></li>
+                <li><a href="#education" class="nav-link" onclick="event.preventDefault(); scrollToSection('education')" data-planet="scholira"><span class="nav-planet-dot" style="--planet-color: #8B5CF6"></span>SCHOLIRA</a></li>
+                <li><a href="#skills" class="nav-link" onclick="event.preventDefault(); scrollToSection('skills')" data-planet="forgevyn"><span class="nav-planet-dot" style="--planet-color: #06B6D4"></span>FORGEVYN</a></li>
+                <li><a href="#services" class="nav-link" onclick="event.preventDefault(); scrollToSection('services')" data-planet="credenx"><span class="nav-planet-dot" style="--planet-color: #10B981"></span>CREDENX</a></li>
+                <li><a href="#projects" class="nav-link" onclick="event.preventDefault(); scrollToSection('projects')" data-planet="arcanex"><span class="nav-planet-dot" style="--planet-color: #F97316"></span>ARCANEX</a></li>
+                <li><a href="#journey" class="nav-link" onclick="event.preventDefault(); scrollToSection('journey')" data-planet="chronethis"><span class="nav-planet-dot" style="--planet-color: #EC4899"></span>CHRONETHIS</a></li>
+                <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); scrollToSection('contact')" data-planet="signalyx"><span class="nav-planet-dot" style="--planet-color: #22C55E"></span>SIGNALYX</a></li>
+            </ul>
+
+            <!-- 3D Galaxy Universe & SFX Audio Toggle Controls -->
+            <div class="nav-right-actions" style="display: flex; align-items: center; gap: 0.55rem;">
+                <button id="nav-sfx-toggle" class="nav-sfx-toggle" onclick="toggleSFXMode()" title="Toggle Cyber Sound Effects">
+                    🔊 SFX ON
+                </button>
+                <button id="nav-3d-toggle" class="nav-3d-toggle" onclick="toggleGalaxy3DMode()" title="Toggle Interactive 3D Solar System Mode">
+                    🌌 3D GALAXY
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main id="main-content">
+
+        <!-- HERO SECTION (Dynamic) -->
+        <section id="hero" class="hero">
+            <div class="container" id="hero-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION (Dynamic) -->
+        <section id="about" class="about py-section">
+            <div class="container" id="about-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION (Dynamic) -->
+        <section id="education" class="education py-section">
+            <div class="container" id="education-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION (Dynamic) -->
+        <section id="skills" class="skills py-section">
+            <div class="container" id="skills-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- SERVICES SECTION (Dynamic) -->
+        <section id="services" class="services py-section">
+            <div class="container" id="services-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION (Dynamic) -->
+        <section id="projects" class="projects py-section">
+            <div class="container" id="projects-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- JOURNEY TIMELINE SECTION (Dynamic) -->
+        <section id="journey" class="journey py-section">
+            <div class="container" id="journey-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION (Dynamic) -->
+        <section id="contact" class="contact py-section">
+            <div class="container" id="contact-container">
+                <!-- Rendered dynamically by render.js -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER (Dynamic)
+    ========================== -->
+    <footer class="footer">
+        <div class="container" id="footer-container">
+            <!-- Rendered dynamically by render.js -->
+        </div>
+    </footer>
+
+    <!-- =========================
+         LUCIDE ICONS LIBRARY
+    ========================== -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- =========================
+         JAVASCRIPT DATA & ENGINE
+    ========================== -->
+    <script src="assets/js/config.js"></script>
+
+    <!-- Modular Data Files -->
+    <script src="assets/js/data/profile.js"></script>
+    <script src="assets/js/data/education.js"></script>
+    <script src="assets/js/data/skills.js"></script>
+    <script src="assets/js/data/services.js"></script>
+    <script src="assets/js/data/projects.js"></script>
+    <script src="assets/js/data/journey.js"></script>
+    <script src="assets/js/data/internships.js"></script>
+    <script src="assets/js/data/contact.js"></script>
+
+    <!-- Interactive Features & Visual Effects -->
+    <script src="assets/js/canvas-bg.js"></script>
+    <script src="assets/js/terminal.js"></script>
+
+    <!-- App Engine & Controllers -->
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/render.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/ai-assistant.js"></script>
+    <script src="assets/js/voice-pitch.js"></script>
+    <script src="assets/js/galaxy-3d.js"></script>
+    <script src="assets/js/trophies.js"></script>
+    <script src="assets/js/sfx.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

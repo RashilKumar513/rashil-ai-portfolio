@@ -1,0 +1,175 @@
+/* =====================================================
+   NEXUS Portfolio - Responsive Breakpoints & Mobile UI
+===================================================== */
+
+/* ==========================
+   DESKTOP DEFAULT (Min 641px)
+========================== */
+@media screen and (min-width: 641px) {
+    .nav-toggle {
+        display: none !important;
+    }
+
+    .nav-menu {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 2rem !important;
+        position: static !important;
+        background: transparent !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        height: auto !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+}
+
+/* ==========================
+   TABLET BREAKPOINT (Max 900px)
+========================== */
+@media screen and (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero-visual-col {
+        max-width: 550px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .about-grid-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-portrait-card-big {
+        max-width: 450px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ==========================
+   MOBILE BREAKPOINT (Max 640px)
+========================== */
+@media screen and (max-width: 640px) {
+    /* Mobile Navigation Hamburger Menu */
+    .nav-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: rgba(8, 12, 20, 0.98);
+        backdrop-filter: var(--backdrop-blur);
+        -webkit-backdrop-filter: var(--backdrop-blur);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.75rem;
+        padding: 2rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+        z-index: 999;
+    }
+
+    .nav-menu.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .nav-link {
+        font-size: 1.15rem;
+    }
+
+    /* Hero Responsive Adjustments */
+    .hero {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + 1.5rem);
+    }
+
+    .pec-giant-title {
+        font-size: 2.25rem;
+    }
+
+    .pec-subhead {
+        font-size: 0.85rem;
+    }
+
+    .pec-hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .pec-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Vertical Timeline Mobile Layout */
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 3.5rem !important;
+        padding-right: 0 !important;
+    }
+
+    .timeline-left, .timeline-right {
+        left: 0;
+    }
+
+    .timeline-node {
+        left: 0 !important;
+        right: auto !important;
+    }
+
+    .focus-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card-main {
+        padding: 1.5rem;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
