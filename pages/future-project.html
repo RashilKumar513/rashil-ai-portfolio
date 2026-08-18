@@ -20,6 +20,10 @@
 </head>
 <body style="background: #040711; color: #F8FAFC; font-family: 'Inter', sans-serif;">
 
+    <!-- FUTURISTIC ROUND CURSOR -->
+    <div id="cyber-cursor-dot" class="cyber-cursor-dot"></div>
+    <div id="cyber-cursor-ring" class="cyber-cursor-ring"></div>
+
     <!-- NAVIGATION HEADER -->
     <header class="header">
         <nav class="navbar">
@@ -27,6 +31,9 @@
                 RASHIL<span class="nav-logo-badge">.AI</span>
             </a>
             <div style="display: flex; align-items: center; gap: 1rem;">
+                <button id="sfx-toggle-btn" class="nav-sfx-toggle" onclick="cyberSFX.toggle()">
+                    [ 🔊 SFX ON ]
+                </button>
                 <a href="../index.html#projects" class="project-btn project-btn-demo" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
                     ← BACK TO MAIN PORTFOLIO
                 </a>
@@ -35,92 +42,104 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="container py-section" style="margin-top: 80px; max-width: 1000px;">
+    <main class="container py-section" style="margin-top: 80px; max-width: 1050px;">
         <div class="pec-section-header">
             <span class="planet-section-label" style="color: #38BDF8;">FUTURE ROADMAP · INNOVATION LAB</span>
             <h1 class="pec-section-title" style="font-family: 'Orbitron', sans-serif; font-size: 2.2rem; margin-top: 0.5rem; color: #FFFFFF;">
                 Next-Gen AI & Autonomous Systems
             </h1>
-            <p class="pec-subtitle" style="max-width: 700px; margin-top: 0.8rem; color: #94A3B8;">
-                Upcoming research initiatives and production systems being engineered by <strong>Rashil Kumar Suresh Kumar</strong>.
+            <p class="pec-subtitle" style="max-width: 750px; margin-top: 0.8rem; color: #94A3B8;">
+                Upcoming research initiatives and production systems engineered by <strong>Rashil Kumar Suresh Kumar</strong>.
             </p>
         </div>
 
         <!-- FUTURE PROJECTS GRID -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.75rem; margin-top: 3rem;">
             
             <!-- CARD 1 -->
-            <div class="glass-featured hover-lift" style="padding: 2rem; border-radius: 16px; border-left: 3px solid #38BDF8;">
+            <div class="glass-featured hover-lift" style="padding: 2.2rem; border-radius: 18px; border-left: 4px solid #38BDF8; background: rgba(10, 16, 28, 0.92);">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #38BDF8; background: rgba(56, 189, 248, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">
+                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #38BDF8; background: rgba(56, 189, 248, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px; letter-spacing: 0.05em;">
                         Q4 2026 ROADMAP
                     </span>
-                    <i data-lucide="cpu" style="color: #38BDF8;"></i>
+                    <i data-lucide="cpu" style="color: #38BDF8; width: 24px; height: 24px;"></i>
                 </div>
                 <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.6rem;">
                     Autonomous RAG Vector Agent
                 </h3>
-                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1.2rem;">
-                    Multi-agent retrieval architecture utilizing Gemini 2.5 API and local Ollama embeddings for real-time document analysis and instant querying.
+                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.65; margin-bottom: 1.2rem;">
+                    Multi-agent retrieval architecture utilizing Gemini 2.5 API and local Ollama vector embeddings for real-time document analysis, semantic search, and zero-latency synthesis.
                 </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-                    <span class="cert-skill-pill">Gemini API</span>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem;">
+                    <span class="cert-skill-pill">Gemini 2.5 API</span>
                     <span class="cert-skill-pill">ChromaDB</span>
                     <span class="cert-skill-pill">Python</span>
+                    <span class="cert-skill-pill">RAG Vector Store</span>
                 </div>
+                <button onclick="showSpecModal('rag')" class="project-btn project-btn-demo" style="width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.6rem;">
+                    🔍 INSPECT ARCHITECTURE SPEC
+                </button>
             </div>
 
             <!-- CARD 2 -->
-            <div class="glass-featured hover-lift" style="padding: 2rem; border-radius: 16px; border-left: 3px solid #10B981;">
+            <div class="glass-featured hover-lift" style="padding: 2.2rem; border-radius: 18px; border-left: 4px solid #10B981; background: rgba(10, 16, 28, 0.92);">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #10B981; background: rgba(16, 185, 129, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">
+                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #10B981; background: rgba(16, 185, 129, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px; letter-spacing: 0.05em;">
                         IN DEVELOPMENT
                     </span>
-                    <i data-lucide="shield-check" style="color: #10B981;"></i>
+                    <i data-lucide="shield-check" style="color: #10B981; width: 24px; height: 24px;"></i>
                 </div>
                 <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.6rem;">
                     Zero-Trust QR Certificate Hash API
                 </h3>
-                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1.2rem;">
-                    Cryptographic hashing verification engine allowing instant mobile QR scanning and audit logs for institutional certificate issuing.
+                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.65; margin-bottom: 1.2rem;">
+                    Cryptographic hashing verification engine allowing instant mobile QR scanning and audit logs for institutional certificate issuing with SHA-256 tamper-proof payloads.
                 </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem;">
+                    <span class="cert-skill-pill">SHA-256 Hash</span>
                     <span class="cert-skill-pill">Node.js</span>
-                    <span class="cert-skill-pill">SHA-256</span>
                     <span class="cert-skill-pill">Express</span>
+                    <span class="cert-skill-pill">OWASP Security</span>
                 </div>
+                <button onclick="showSpecModal('qr')" class="project-btn project-btn-demo" style="width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.6rem;">
+                    🔍 INSPECT SECURITY SPEC
+                </button>
             </div>
 
             <!-- CARD 3 -->
-            <div class="glass-featured hover-lift" style="padding: 2rem; border-radius: 16px; border-left: 3px solid #A855F7;">
+            <div class="glass-featured hover-lift" style="padding: 2.2rem; border-radius: 18px; border-left: 4px solid #A855F7; background: rgba(10, 16, 28, 0.92);">
                 <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
-                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #A855F7; background: rgba(168, 85, 247, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px;">
+                    <span style="font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 800; color: #A855F7; background: rgba(168, 85, 247, 0.15); padding: 0.25rem 0.65rem; border-radius: 9999px; letter-spacing: 0.05em;">
                         RESEARCH STAGE
                     </span>
-                    <i data-lucide="sparkles" style="color: #A855F7;"></i>
+                    <i data-lucide="sparkles" style="color: #A855F7; width: 24px; height: 24px;"></i>
                 </div>
                 <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.6rem;">
                     Speech-to-Code Executive Assistant
                 </h3>
-                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1.2rem;">
-                    Voice-controlled browser assistant synthesizing Web Audio API audio feedback and automated task orchestration.
+                <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.65; margin-bottom: 1.2rem;">
+                    Voice-controlled browser assistant synthesizing zero-latency Web Audio API audio feedback, dynamic speech recognition, and automated portfolio orchestration.
                 </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+                <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-bottom: 1.2rem;">
                     <span class="cert-skill-pill">Web Audio API</span>
                     <span class="cert-skill-pill">React</span>
                     <span class="cert-skill-pill">SpeechSynthesis</span>
+                    <span class="cert-skill-pill">WebSockets</span>
                 </div>
+                <button onclick="showSpecModal('speech')" class="project-btn project-btn-demo" style="width: 100%; justify-content: center; font-size: 0.75rem; padding: 0.6rem;">
+                    🔍 INSPECT AUDIO SPEC
+                </button>
             </div>
 
         </div>
 
         <!-- ACTION CALLOUT -->
-        <div style="margin-top: 4rem; text-align: center; padding: 2.5rem; background: rgba(15, 23, 42, 0.8); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1);">
+        <div style="margin-top: 4rem; text-align: center; padding: 2.5rem; background: rgba(15, 23, 42, 0.85); border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 15px 35px rgba(0,0,0,0.6);">
             <h2 style="font-family: 'Orbitron', sans-serif; font-size: 1.5rem; color: #FFFFFF; margin-bottom: 0.8rem;">
                 Explore Production Projects Live
             </h2>
             <p style="color: #94A3B8; margin-bottom: 1.5rem; font-size: 0.9rem;">
-                View completed full-stack and AI applications on the main portfolio page.
+                View completed full-stack and AI applications on the primary portfolio dashboard.
             </p>
             <a href="../index.html#projects" class="btn-glowing" style="display: inline-flex !important; width: auto !important; padding: 0.85rem 2rem !important;">
                 LAUNCH MAIN PORTFOLIO ↗
@@ -128,8 +147,45 @@
         </div>
     </main>
 
+    <!-- ARCHITECTURE SPEC MODAL -->
+    <div id="spec-modal" style="display: none; position: fixed; inset: 0; background: rgba(4, 7, 17, 0.88); backdrop-filter: blur(16px); z-index: 999999; align-items: center; justify-content: center; padding: 1.5rem;">
+        <div class="glass-featured" style="max-width: 580px; width: 100%; padding: 2rem; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.4); background: #0A101C; box-shadow: 0 0 50px rgba(56, 189, 248, 0.25);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+                <h3 id="modal-title" style="font-family: 'Orbitron', sans-serif; font-size: 1.15rem; color: #FFFFFF;">ARCHITECTURE SPECIFICATION</h3>
+                <button onclick="closeSpecModal()" style="color: #94A3B8; cursor: pointer; background: transparent; border: none; font-size: 1.2rem;">✕</button>
+            </div>
+            <pre id="modal-code" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #38BDF8; background: #040711; padding: 1.2rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); overflow-x: auto; white-space: pre-wrap; margin-bottom: 1.2rem;"></pre>
+            <button onclick="closeSpecModal()" class="btn-glowing" style="width: 100% !important; padding: 0.75rem !important; font-size: 0.8rem !important;">CLOSE SPECIFICATION</button>
+        </div>
+    </div>
+
+    <script src="../assets/js/sfx.js"></script>
     <script>
         lucide.createIcons();
+
+        // Custom Cursor Lerp
+        const ring = document.getElementById("cyber-cursor-ring");
+        window.addEventListener("mousemove", (e) => {
+            if (ring) ring.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        });
+
+        const specs = {
+            rag: `{\n  "system": "Autonomous RAG Vector Agent",\n  "model": "Gemini 2.5 Flash / Pro",\n  "vectorStore": "ChromaDB Persistent Store",\n  "chunkSize": 512,\n  "overlap": 64,\n  "latencyTarget": "< 350ms",\n  "security": "Sanitized Prompt Injection Filters"\n}`,
+            qr: `{\n  "system": "Zero-Trust QR Hash API",\n  "hashAlgorithm": "SHA-256",\n  "payloadFormat": "JWT Cryptographic Signature",\n  "qrResolution": "300 DPI Vector PDF",\n  "endpoint": "https://api.rashil.ai/v1/verify-credential"\n}`,
+            speech: `{\n  "system": "Speech-to-Code Executive Assistant",\n  "audioEngine": "Web Audio API Oscillator Node",\n  "speechRecog": "Web Speech API (Chrome/Edge)",\n  "samplingRate": "48000 Hz",\n  "latency": "Zero-Latency Local Synthesis"\n}`
+        };
+
+        function showSpecModal(key) {
+            if (window.cyberSFX) window.cyberSFX.playClickSFX();
+            document.getElementById("modal-title").innerText = key === 'rag' ? 'RAG VECTOR AGENT SPEC' : key === 'qr' ? 'ZERO-TRUST QR HASH SPEC' : 'SPEECH-TO-CODE AUDIO SPEC';
+            document.getElementById("modal-code").innerText = specs[key];
+            document.getElementById("spec-modal").style.display = 'flex';
+        }
+
+        function closeSpecModal() {
+            if (window.cyberSFX) window.cyberSFX.playClickSFX();
+            document.getElementById("spec-modal").style.display = 'none';
+        }
     </script>
 </body>
 </html>

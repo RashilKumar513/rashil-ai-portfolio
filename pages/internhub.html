@@ -20,6 +20,10 @@
 </head>
 <body style="background: #040711; color: #F8FAFC; font-family: 'Inter', sans-serif;">
 
+    <!-- FUTURISTIC ROUND CURSOR -->
+    <div id="cyber-cursor-dot" class="cyber-cursor-dot"></div>
+    <div id="cyber-cursor-ring" class="cyber-cursor-ring"></div>
+
     <!-- NAVIGATION HEADER -->
     <header class="header">
         <nav class="navbar">
@@ -27,6 +31,9 @@
                 RASHIL<span class="nav-logo-badge">.AI</span>
             </a>
             <div style="display: flex; align-items: center; gap: 1rem;">
+                <button id="sfx-toggle-btn" class="nav-sfx-toggle" onclick="cyberSFX.toggle()">
+                    [ 🔊 SFX ON ]
+                </button>
                 <a href="../index.html#journey" class="project-btn project-btn-demo" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
                     ← BACK TO VERIFIED TIMELINE
                 </a>
@@ -35,7 +42,7 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="container py-section" style="margin-top: 80px; max-width: 1000px;">
+    <main class="container py-section" style="margin-top: 80px; max-width: 1050px;">
         <div class="pec-section-header">
             <span class="planet-section-label" style="color: #10B981;">FEATURED PRODUCTION SYSTEM</span>
             <h1 class="pec-section-title" style="font-family: 'Orbitron', sans-serif; font-size: 2.2rem; margin-top: 0.5rem; color: #FFFFFF;">
@@ -82,6 +89,26 @@
             </div>
         </div>
 
+        <!-- LIVE HASH VERIFIER SIMULATOR -->
+        <div class="glass-featured" style="padding: 2rem; border-radius: 20px; margin-top: 2rem; border: 1px solid rgba(56, 189, 248, 0.3); background: rgba(10, 16, 28, 0.95);">
+            <h3 style="font-family: 'Orbitron', sans-serif; font-size: 1.2rem; color: #FFFFFF; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="terminal" style="color: #38BDF8;"></i> Live Hash Verifier Simulator
+            </h3>
+            <p style="font-size: 0.85rem; color: #94A3B8; margin-bottom: 1.2rem;">
+                Test cryptographic hash verification for candidate record <code style="color: #38BDF8; background: rgba(56,189,248,0.1); padding: 0.2rem 0.5rem; border-radius: 4px;">HASH#PEC-2026-DA00</code> (Data Analyst Intern @ Beeskilled):
+            </p>
+
+            <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                <button onclick="simulateVerification()" class="btn-glowing" style="padding: 0.75rem 1.5rem !important; font-size: 0.8rem !important; width: auto !important;">
+                    RUN CRYPTOGRAPHIC AUDIT ⚡
+                </button>
+            </div>
+
+            <div id="verify-result" style="display: none; margin-top: 1.2rem; padding: 1rem; border-radius: 12px; background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4); font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: #34D399;">
+                ✔ HASH MATCH VERIFIED: Candidate Rashil Kumar Suresh Kumar | Data Analyst Intern @ Beeskilled | Period: Jul 2026 – Sep 2026 | Status: AUTHENTICATED
+            </div>
+        </div>
+
         <!-- CALL TO ACTION -->
         <div style="margin-top: 3.5rem; text-align: center;">
             <a href="../index.html#journey" class="btn-glowing" style="display: inline-flex !important; width: auto !important; padding: 0.95rem 2.25rem !important;">
@@ -90,8 +117,21 @@
         </div>
     </main>
 
+    <script src="../assets/js/sfx.js"></script>
     <script>
         lucide.createIcons();
+
+        // Custom Cursor Lerp
+        const ring = document.getElementById("cyber-cursor-ring");
+        window.addEventListener("mousemove", (e) => {
+            if (ring) ring.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+        });
+
+        function simulateVerification() {
+            if (window.cyberSFX) window.cyberSFX.playTrophySFX();
+            const res = document.getElementById("verify-result");
+            res.style.display = 'block';
+        }
     </script>
 </body>
 </html>
