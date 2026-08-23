@@ -121,14 +121,103 @@ class ResumeGeneratorEngine {
         if (!box || typeof internshipsData === "undefined") return;
 
         let filteredItems = internshipsData;
+        let roleTitle = "AI & MERN Full-Stack Engineer";
+        let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 13 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
+        
+        let skillsGridHTML = "";
+
         if (this.activeFilter === "ai") {
+            roleTitle = "AI, Deep Learning & RAG Vector Specialist";
+            summaryText = "Specialized AI/ML Candidate with hands-on research and engineering experience building Gemini 2.5 API RAG vector stores, ChromaDB semantic search engines, OpenCV computer vision pipelines, and Hawking Defense drone object detection algorithms.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("ai") || s.toLowerCase().includes("deep") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("learning") || s.toLowerCase().includes("cloud")));
+            
+            skillsGridHTML = `
+                <div style="background: #EFF6FF; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #2563EB; grid-column: span 2;">
+                    <strong style="color: #1E40AF; font-size: 0.9rem;">🤖 PRIMARY FOCUS: AI, RAG & Deep Learning Engine Architecture</strong>
+                    <div style="margin-top: 0.3rem; color: #1E293B;">
+                        Gemini 2.5 API, ChromaDB Vector Store, Ollama, LangChain, PyTorch, OpenCV, Computer Vision, Autonomous Drone Object Detection, Vector Embeddings & Cosine Similarity.
+                    </div>
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #10B981;">
+                    <strong>Supporting Backend:</strong> Python (FastAPI/Flask), Node.js REST Endpoints, Docker Containers.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #8B5CF6;">
+                    <strong>Model Optimization:</strong> Dataset Annotation, Fine-Tuning, Prompt Engineering.
+                </div>
+            `;
         } else if (this.activeFilter === "fullstack") {
+            roleTitle = "MERN Full-Stack & Web Security Specialist";
+            summaryText = "Production-grade Full Stack Web Engineer specializing in React.js frontend performance, Node/Express microservices, MongoDB schemas, and OWASP Top 10 security standards. Developer behind 100% Best Quality automated certificate generation systems.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("qa") || s.toLowerCase().includes("web") || s.toLowerCase().includes("security") || s.toLowerCase().includes("express")));
+            
+            skillsGridHTML = `
+                <div style="background: #ECFDF5; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #10B981; grid-column: span 2;">
+                    <strong style="color: #065F46; font-size: 0.9rem;">⚡ PRIMARY FOCUS: Full-Stack MERN Architecture & Web Security</strong>
+                    <div style="margin-top: 0.3rem; color: #1E293B;">
+                        React.js (ES6+), Node.js, Express.js, MongoDB Atlas, PostgreSQL, OWASP Top 10 Threat Mitigation, XSS/SQLi Prevention, RESTful Microservices, Tailwind CSS.
+                    </div>
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #3B82F6;">
+                    <strong>Security & Auth:</strong> SHA-256 Hashing, JWT Tokens, Watermarking APIs.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #F59E0B;">
+                    <strong>Quality & Testing:</strong> Android QA Testing, Lighthouse 95+ Optimization.
+                </div>
+            `;
         } else if (this.activeFilter === "data") {
+            roleTitle = "Data Analyst & Quality Assurance Engineer";
+            summaryText = "Analytical Data & Quality Specialist with hands-on experience at Beeskilled (AICTE & MSME Reg.) and Delphi TVS, mastering Python data pipelines, SQL queries, automated report generation, and 5S Lean Quality standards.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("data") || s.toLowerCase().includes("python") || s.toLowerCase().includes("sql") || s.toLowerCase().includes("analytics") || s.toLowerCase().includes("quality") || s.toLowerCase().includes("5s")));
+            
+            skillsGridHTML = `
+                <div style="background: #FEF3C7; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #F59E0B; grid-column: span 2;">
+                    <strong style="color: #92400E; font-size: 0.9rem;">📊 PRIMARY FOCUS: Data Analytics, Python & Quality Control</strong>
+                    <div style="margin-top: 0.3rem; color: #1E293B;">
+                        Python (Pandas, NumPy, Matplotlib), SQL Relational Databases, Automated CSV/Excel Data Pipelines, 5S Lean Manufacturing & Quality Inspection (Delphi TVS).
+                    </div>
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #10B981;">
+                    <strong>Business Intelligence:</strong> Automated PDF Certificate Generation, Student Analytics.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #6366F1;">
+                    <strong>QA Testing:</strong> Warehouse Logistics Inspection, Android App Bug Auditing.
+                </div>
+            `;
         } else if (this.activeFilter === "leadership") {
+            roleTitle = "Leadership, HR Talent Sourcing & Event Operations Specialist";
+            summaryText = "Proven Student Leader and Event Coordinator with demonstrated expertise managing 2,000+ attendee hackathons, campus community outreach for 500+ members at Hypedin, and administrative HR talent sourcing across 5 verified organizations.";
             filteredItems = internshipsData.filter(i => i.category === "leadership");
+            
+            skillsGridHTML = `
+                <div style="background: #F3E8FF; padding: 0.75rem 1rem; border-radius: 8px; border-left: 4px solid #8B5CF6; grid-column: span 2;">
+                    <strong style="color: #5B21B6; font-size: 0.9rem;">👥 PRIMARY FOCUS: Event Operations, HR Sourcing & Leadership</strong>
+                    <div style="margin-top: 0.3rem; color: #1E293B;">
+                        Hackathon & Event Management (2,000+ Attendees), HR Talent Sourcing, Administrative Logistics (Renu Sharma Foundation), Community Growth (Hypedin 500+ Members).
+                    </div>
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #EC4899;">
+                    <strong>Communication:</strong> Executive Outreach, Marketing Campaigns, Student Mentorship.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #14B8A6;">
+                    <strong>Operations:</strong> On-Site Logistics, Workspace Filing & Digital Archiving.
+                </div>
+            `;
+        } else {
+            // Master Overview (All)
+            skillsGridHTML = `
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #2563EB;">
+                    <strong>AI & Machine Learning:</strong> Gemini API v2.5, RAG Vector Search (ChromaDB), OpenCV, Computer Vision, Deep Learning (Drone AI).
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #10B981;">
+                    <strong>Full-Stack Web Architecture:</strong> React.js, Node.js, Express.js, MongoDB Atlas, REST APIs, Tailwind CSS, Lighthouse 95+.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #F59E0B;">
+                    <strong>Data Analytics & QA:</strong> Python (Pandas/NumPy), SQL, Data Visualization, Android QA Testing, 5S Quality Standards.
+                </div>
+                <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #8B5CF6;">
+                    <strong>Security & Operations:</strong> OWASP Top 10, SHA-256 Hashing, HR Talent Sourcing, Event Operations (2,000+ Attendees).
+                </div>
+            `;
         }
 
         box.innerHTML = `
@@ -137,7 +226,7 @@ class ResumeGeneratorEngine {
                     <div>
                         <h1 style="font-size: 1.85rem; font-weight: 900; color: #0F172A; text-transform: uppercase; margin: 0;">RASHIL KUMAR SURESH KUMAR</h1>
                         <p style="font-size: 1rem; font-weight: 800; color: #2563EB; margin-top: 0.25rem;">
-                            AI & MERN Full-Stack Engineer | Panimalar Engineering College (B.Tech AI & DS)
+                            ${roleTitle} | Panimalar Engineering College (B.Tech AI & DS)
                         </p>
                     </div>
                     <div style="background: #F1F5F9; border: 1px solid #CBD5E1; padding: 0.5rem 0.85rem; border-radius: 8px; font-size: 0.78rem; text-align: right; font-weight: 700; color: #334155;">
@@ -157,36 +246,25 @@ class ResumeGeneratorEngine {
 
             <div style="margin-bottom: 1.4rem;">
                 <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem;">
-                    EXECUTIVE CANDIDATE SUMMARY
+                    TAILORED CANDIDATE SUMMARY
                 </h3>
                 <p style="font-size: 0.86rem; color: #334155; margin: 0; line-height: 1.6;">
-                    High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across <strong>13 verified internships</strong>, achieving <strong>100% verified attendance</strong> and a <strong>7.7 CGPA</strong>. Specialized in Gemini API 2.5 RAG vector stores, MERN microservices, OWASP security architecture, and automated certificate generation systems for esteemed organizations.
+                    ${summaryText}
                 </p>
             </div>
 
             <div style="margin-bottom: 1.4rem;">
                 <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem;">
-                    TECHNICAL SKILLS & ENGINEERING COMPETENCIES
+                    TECHNICAL SKILLS & ENGINEERING COMPETENCIES (TAILORED)
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; font-size: 0.82rem;">
-                    <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #2563EB;">
-                        <strong>AI & Machine Learning:</strong> Gemini API v2.5, RAG Vector Search (ChromaDB, Ollama), OpenCV, Computer Vision, Deep Learning (Drone AI).
-                    </div>
-                    <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #10B981;">
-                        <strong>Full-Stack Web Architecture:</strong> React.js, Node.js, Express.js, MongoDB Atlas, PostgreSQL, REST APIs, Tailwind CSS, Lighthouse 95+.
-                    </div>
-                    <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #F59E0B;">
-                        <strong>Data Analytics & QA:</strong> Python (Pandas/NumPy), SQL, Data Visualization, Android QA Testing, Lean Manufacturing & 5S Quality Standards.
-                    </div>
-                    <div style="background: #F8FAFC; padding: 0.65rem 0.85rem; border-radius: 6px; border-left: 3px solid #8B5CF6;">
-                        <strong>Security & Operations:</strong> OWASP Top 10, SHA-256 Hashing, HR Talent Sourcing, Event Management (2,000+ Attendees), Workspace Admin.
-                    </div>
+                    ${skillsGridHTML}
                 </div>
             </div>
 
             <div style="margin-bottom: 1.4rem;">
                 <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.85rem;">
-                    VERIFIED WORK EXPERIENCE (${filteredItems.length} RELEVANT INTERNSHIPS)
+                    RELEVANT VERIFIED EXPERIENCE (${filteredItems.length} RELEVANT ROLES)
                 </h3>
                 ${filteredItems.map(item => `
                     <div style="margin-bottom: 1rem; padding-bottom: 0.85rem; border-bottom: 1px solid #E2E8F0;">
