@@ -92,24 +92,10 @@ class VoiceNavEngine {
             document.body.appendChild(hud);
         }
 
-        // Attach Header Button
-        const nav = document.querySelector(".navbar");
-        if (nav && !document.getElementById("nav-voice-btn")) {
-            const voiceBtn = document.createElement("button");
-            voiceBtn.id = "nav-voice-btn";
-            voiceBtn.className = "nav-sfx-toggle";
-            voiceBtn.style.borderColor = "rgba(168, 85, 247, 0.5)";
-            voiceBtn.style.color = "#A855F7";
-            voiceBtn.style.background = "rgba(168, 85, 247, 0.12)";
-            voiceBtn.innerHTML = `[ 🎙️ VOICE NAV ]`;
-            voiceBtn.onclick = () => this.toggle();
-
-            const sfxBtn = document.getElementById("sfx-toggle-btn");
-            if (sfxBtn && sfxBtn.parentNode) {
-                sfxBtn.parentNode.insertBefore(voiceBtn, sfxBtn);
-            } else {
-                nav.appendChild(voiceBtn);
-            }
+        // Attach event to existing nav-voice-btn if present
+        const existingBtn = document.getElementById("nav-voice-btn");
+        if (existingBtn) {
+            existingBtn.onclick = () => this.toggle();
         }
     }
 
@@ -142,15 +128,11 @@ class VoiceNavEngine {
         if (!btn) return;
 
         if (listening) {
-            btn.style.color = "#F43F5E";
-            btn.style.borderColor = "#F43F5E";
-            btn.style.background = "rgba(244, 63, 94, 0.2)";
-            btn.innerHTML = `[ 🔴 LISTENING... ]`;
+            btn.classList.add("active-listening");
+            btn.innerHTML = `🔴 LISTENING...`;
         } else {
-            btn.style.color = "#A855F7";
-            btn.style.borderColor = "rgba(168, 85, 247, 0.5)";
-            btn.style.background = "rgba(168, 85, 247, 0.12)";
-            btn.innerHTML = `[ 🎙️ VOICE NAV ]`;
+            btn.classList.remove("active-listening");
+            btn.innerHTML = `🎙️ VOICE NAV`;
         }
     }
 

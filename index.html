@@ -117,13 +117,16 @@
                 <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); scrollToSection('contact')" data-planet="signalyx"><span class="nav-planet-dot" style="--planet-color: #22C55E"></span>SIGNALYX</a></li>
             </ul>
 
-            <!-- 3D Galaxy Universe & SFX Audio Toggle Controls -->
-            <div class="nav-right-actions" style="display: flex; align-items: center; gap: 0.55rem;">
-                <button id="nav-sfx-toggle" class="nav-sfx-toggle" onclick="toggleSFXMode()" title="Toggle Cyber Sound Effects">
+            <!-- 3D Galaxy Universe, SFX Audio & Voice Control Action Pills -->
+            <div class="nav-right-actions">
+                <button id="sfx-toggle-btn" class="nav-action-pill nav-sfx-pill" onclick="toggleSFXMode()" title="Toggle Cyber Sound Effects">
                     🔊 SFX ON
                 </button>
-                <button id="nav-3d-toggle" class="nav-3d-toggle" onclick="toggleGalaxy3DMode()" title="Toggle Interactive 3D Solar System Mode">
+                <button id="nav-3d-toggle" class="nav-action-pill nav-3d-pill" onclick="toggleGalaxy3DMode()" title="Toggle Interactive 3D Solar System">
                     🌌 3D GALAXY
+                </button>
+                <button id="nav-voice-btn" class="nav-action-pill nav-voice-pill" onclick="toggleVoiceNav()" title="Toggle Cyber Voice Commands">
+                    🎙️ VOICE NAV
                 </button>
             </div>
         </nav>

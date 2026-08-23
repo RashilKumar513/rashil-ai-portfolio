@@ -3600,3 +3600,73 @@ body.cursor-active .cyber-cursor-ring {
     backface-visibility: hidden;
     will-change: transform;
 }
+
+/* =====================================================
+   UNIFIED TOP NAVBAR ACTION PILLS ALIGNMENT
+===================================================== */
+.nav-right-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.55rem !important;
+    height: 100% !important;
+}
+
+.nav-action-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.35rem !important;
+    height: 36px !important;
+    padding: 0 0.9rem !important;
+    font-family: 'Orbitron', var(--font-heading) !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 9999px !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+}
+
+.nav-sfx-pill {
+    background: rgba(56, 189, 248, 0.1) !important;
+    border: 1px solid rgba(56, 189, 248, 0.4) !important;
+    color: #38BDF8 !important;
+}
+
+.nav-sfx-pill:hover {
+    background: rgba(56, 189, 248, 0.25) !important;
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.5) !important;
+}
+
+.nav-3d-pill {
+    background: rgba(99, 102, 241, 0.12) !important;
+    border: 1px solid rgba(99, 102, 241, 0.45) !important;
+    color: #818CF8 !important;
+}
+
+.nav-3d-pill:hover {
+    background: rgba(99, 102, 241, 0.25) !important;
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.5) !important;
+}
+
+.nav-voice-pill {
+    background: rgba(168, 85, 247, 0.12) !important;
+    border: 1px solid rgba(168, 85, 247, 0.45) !important;
+    color: #C084FC !important;
+}
+
+.nav-voice-pill:hover {
+    background: rgba(168, 85, 247, 0.25) !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5) !important;
+}
+
+.nav-voice-pill.active-listening {
+    background: rgba(244, 63, 94, 0.25) !important;
+    border-color: #F43F5E !important;
+    color: #F43F5E !important;
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.7) !important;
+}
