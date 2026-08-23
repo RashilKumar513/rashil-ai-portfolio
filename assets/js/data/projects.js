@@ -177,9 +177,9 @@ const projectsData = [
         description: "Developed a dual-stage computer vision application in Python and OpenCV. Combines Haar Cascade rapid face detection with Local Binary Patterns Histograms (LBPH) texture recognition, managed through a custom Tkinter desktop interface with 100+ profile retraining.",
         technologies: ["Python", "OpenCV", "Tkinter", "Haar Cascade", "LBPH Algorithm"],
         image: "assets/images/face-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/Face-Recognition",
+        demo: "https://face-recognition-zrnc.onrender.com/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Achieved 92% recognition accuracy across variable lighting conditions",
             "Dual-stage detection: Haar Cascade + LBPH texture classification",
