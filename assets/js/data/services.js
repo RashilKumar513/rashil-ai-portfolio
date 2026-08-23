@@ -1,11 +1,11 @@
 /* =====================================================
-   NEXUS Portfolio - Enterprise Services Dataset
+   RASHIL.AI - Enterprise Certificate & Event Management Services
    Target Candidate: RASHIL KUMAR SURESH KUMAR
 ===================================================== */
 
 const servicesData = {
-    headline: "100% Premium Quality Certificate Generation & Credential Systems",
-    subheadline: "Empowering esteemed organizations, universities, and corporate events with automated, tamper-proof certificate generation and instant verification infrastructure.",
+    headline: "100% Premium Quality Certificate & Event Management Services",
+    subheadline: "Empowering esteemed organizations, universities, and corporate events with automated, tamper-proof certificate generation, event management operations, and instant verification infrastructure.",
     services: [
         {
             id: "srv-01",
@@ -53,6 +53,22 @@ const servicesData = {
                 "Live Certificate Search Portal",
                 "Attendance & GPA Integration",
                 "OWASP Security Compliant"
+            ]
+        },
+        {
+            id: "srv-04",
+            aiKey: "srv_event",
+            title: "End-to-End Event Management & Hackathon Operations",
+            badge: "100% BEST QUALITY",
+            color: "#F59E0B",
+            icon: "users",
+            description: "Complete technical, organizational, and marketing event management services for hackathons, college symposia, workshops, and corporate conferences with 2,000+ attendee coordination capability.",
+            chatPrompt: "Hi Rashil, I would like to hire your 100% Best Quality Event Management & Hackathon Operations services for our organization's upcoming event.",
+            features: [
+                "Full Event Planning & Operations Logistics",
+                "Participant Registration & Ticketing Portal",
+                "Live On-Site & Online Student Coordination",
+                "Post-Event Automated Certificate & Trophy Dispatch"
             ]
         }
     ]

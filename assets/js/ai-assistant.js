@@ -125,6 +125,18 @@ const AI_RECRUITER_KNOWLEDGE = {
         actions: [
             { label: "Book Service / Email Rashil", link: "#contact" }
         ]
+    },
+    srv_event: {
+        title: "End-to-End Event Management & Hackathon Operations",
+        badge: "100% BEST QUALITY",
+        text: `<strong>Full-Scope Technical & Event Management Services</strong><br><br>
+        • <strong>Event Operations:</strong> Comprehensive planning, logistics, and on-site coordination for hackathons, college symposia, and workshops.<br>
+        • <strong>Scale:</strong> Proven experience managing 2,000+ attendee events with seamless registration ticketing portals.<br>
+        • <strong>Integrated Delivery:</strong> Combines event management with 100% Best Quality automated certificate dispatch and trophy awards.<br>
+        • <strong>Tech Operations:</strong> Registration portals, live leaderboard tracking, and stakeholder communication.`,
+        actions: [
+            { label: "Book Event Management / Email Rashil", link: "#contact" }
+        ]
     }
 };
 
@@ -252,7 +264,8 @@ class AIRecruiterAssistant {
             case "srv_bulk": return "Hi Rashil, I want to order your 100% Best Quality Bulk Certificate Generation Engine for my organization.";
             case "srv_verify": return "Hi Rashil, I need your Tamper-Proof QR Code & Cryptographic Verification System for our credentials.";
             case "srv_portal": return "Hi Rashil, we want to build a Custom HR & Institutional Credential Portal with your team.";
-            default: return "Enterprise Certificate Service Inquiry";
+            case "srv_event": return "Hi Rashil, I would like to hire your 100% Best Quality Event Management & Hackathon Operations services for our event.";
+            default: return "Enterprise Certificate & Event Service Inquiry";
         }
     }
 

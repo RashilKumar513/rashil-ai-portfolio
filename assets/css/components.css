@@ -3420,17 +3420,11 @@ body.cursor-active .cyber-cursor-ring {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
 }
 
-@media screen and (max-width: 1024px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
     .services-grid {
         grid-template-columns: 1fr;
     }
