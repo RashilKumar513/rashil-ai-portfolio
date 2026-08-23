@@ -45,9 +45,9 @@ const projectsData = [
         description: "Built an intelligent study tool that processes raw audio files, executes base64 encoding, and sends asynchronous requests to Gemini API v2.5. Implemented exponential backoff strategies to achieve a 99% API success rate with <500ms response time and a 95+ Lighthouse performance score.",
         technologies: ["JavaScript", "Gemini API v2.5", "HTML5", "Tailwind CSS", "REST APIs"],
         image: "assets/images/ai-notes-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/lecture-to-notes-generator",
+        demo: "https://lecturetonotesgenerator.netlify.app/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Converted 100+ audio files into structured notes with 85% accuracy",
             "Integrated Gemini API v2.5 processing 1000+ requests with <500ms latency",
