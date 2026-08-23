@@ -3597,3 +3597,12 @@ body.cursor-active .cyber-cursor-ring {
     border-color: #F43F5E;
     box-shadow: 0 0 30px rgba(244, 63, 94, 0.8);
 }
+
+/* =====================================================
+   HOLOGRAPHIC 3D CARD TILT & GLASS SHIMMER DEPTH
+===================================================== */
+.glass-featured, .pec-project-card, .timeline-card, .service-card, .pec-domain-card, .education-card {
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    will-change: transform;
+}

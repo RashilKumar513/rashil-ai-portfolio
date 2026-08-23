@@ -13,6 +13,9 @@ function initAnimations() {
     initBackToTop();
     initSpotlightEffects();
     initCounterAnimations();
+    init3DTiltEffects();
+    initParticleClickBursts();
+    initFluidCursorTrail();
 }
 
 /**
@@ -323,4 +326,148 @@ function initMobileMenu() {
             toggleBtn.setAttribute("aria-expanded", "false");
         });
     });
+}
+
+/**
+ * World First 1: Holographic 3D Card Tilt & Dynamic Glass Shimmer Depth
+ */
+function init3DTiltEffects() {
+    const tiltSelectors = ".glass-featured, .pec-project-card, .timeline-card, .service-card, .pec-domain-card, .education-card";
+    
+    document.addEventListener("mousemove", (e) => {
+        const cards = document.querySelectorAll(tiltSelectors);
+        cards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -8;
+                const rotateY = ((x - centerX) / centerX) * 8;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+                card.style.transition = "transform 0.1s ease-out";
+
+                // Glass Shimmer Gradient Position
+                const shimmerX = (x / rect.width) * 100;
+                const shimmerY = (y / rect.height) * 100;
+                card.style.backgroundImage = `radial-gradient(400px circle at ${shimmerX}% ${shimmerY}%, rgba(255, 255, 255, 0.08), transparent 70%)`;
+            }
+        });
+    });
+
+    document.addEventListener("mouseout", (e) => {
+        if (e.target.closest(tiltSelectors)) {
+            const card = e.target.closest(tiltSelectors);
+            card.style.transform = "perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)";
+            card.style.transition = "transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)";
+            card.style.backgroundImage = "none";
+        }
+    });
+}
+
+/**
+ * World First 2: Cybernetic Particle Burst Explosions on Every Click
+ */
+function initParticleClickBursts() {
+    window.addEventListener("click", (e) => {
+        // Create container for particles
+        const container = document.createElement("div");
+        container.style.position = "fixed";
+        container.style.left = "0";
+        container.style.top = "0";
+        container.style.width = "100vw";
+        container.style.height = "100vh";
+        container.style.pointerEvents = "none";
+        container.style.zIndex = "9999999";
+        document.body.appendChild(container);
+
+        const colors = ["#38BDF8", "#34D399", "#F59E0B", "#EC4899", "#A855F7", "#60A5FA"];
+        const particleCount = 22;
+
+        for (let i = 0; i < particleCount; i++) {
+            const p = document.createElement("div");
+            const size = Math.random() * 6 + 3;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            const angle = (Math.PI * 2 * i) / particleCount + (Math.random() - 0.5);
+            const distance = Math.random() * 60 + 30;
+
+            p.style.position = "absolute";
+            p.style.left = `${e.clientX}px`;
+            p.style.top = `${e.clientY}px`;
+            p.style.width = `${size}px`;
+            p.style.height = `${size}px`;
+            p.style.backgroundColor = color;
+            p.style.borderRadius = "50%";
+            p.style.boxShadow = `0 0 10px ${color}`;
+            p.style.transform = "translate(-50%, -50%) scale(1)";
+            p.style.transition = "transform 0.6s cubic-bezier(0.1, 0.8, 0.3, 1), opacity 0.6s ease";
+            p.style.opacity = "1";
+
+            container.appendChild(p);
+
+            requestAnimationFrame(() => {
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance;
+                p.style.transform = `translate(${tx}px, ${ty}px) scale(0)`;
+                p.style.opacity = "0";
+            });
+        }
+
+        setTimeout(() => {
+            container.remove();
+        }, 650);
+    }, { passive: true });
+}
+
+/**
+ * World First 5: Fluid Neon Energy Trail Cursor
+ */
+function initFluidCursorTrail() {
+    const trailCount = 6;
+    const dots = [];
+
+    for (let i = 0; i < trailCount; i++) {
+        const dot = document.createElement("div");
+        dot.className = "fluid-cursor-trail-dot";
+        dot.style.position = "fixed";
+        dot.style.pointerEvents = "none";
+        dot.style.width = `${14 - i * 2}px`;
+        dot.style.height = `${14 - i * 2}px`;
+        dot.style.borderRadius = "50%";
+        dot.style.background = `rgba(56, 189, 248, ${0.4 - i * 0.06})`;
+        dot.style.boxShadow = `0 0 12px rgba(56, 189, 248, ${0.6 - i * 0.08})`;
+        dot.style.zIndex = `${999998 - i}`;
+        dot.style.transform = "translate(-50%, -50%)";
+        dot.style.transition = "opacity 0.3s ease";
+        document.body.appendChild(dot);
+        dots.push({ el: dot, x: -100, y: -100 });
+    }
+
+    let mouseX = -100;
+    let mouseY = -100;
+
+    window.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    }, { passive: true });
+
+    function animateTrail() {
+        let x = mouseX;
+        let y = mouseY;
+
+        dots.forEach((dotObj, index) => {
+            dotObj.x += (x - dotObj.x) * (0.35 - index * 0.04);
+            dotObj.y += (y - dotObj.y) * (0.35 - index * 0.04);
+            dotObj.el.style.left = `${dotObj.x}px`;
+            dotObj.el.style.top = `${dotObj.y}px`;
+            x = dotObj.x;
+            y = dotObj.y;
+        });
+
+        requestAnimationFrame(animateTrail);
+    }
+    animateTrail();
 }
