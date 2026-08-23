@@ -111,9 +111,9 @@ const projectsData = [
         description: "Created a spatial intelligence web app classifying drone flight zones (Red/Yellow/Green) based on proximity to 6 major airports using geodesic distance algorithms. Includes drone readiness scoring (0-100) for crop spraying and NDVI yield analysis.",
         technologies: ["Python", "Streamlit", "Pandas", "Plotly", "Geopy", "Data Analytics"],
         image: "assets/images/agridrone-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/Agri_Drone_Intelligent_System",
+        demo: "https://agri-drone-intelligent-system.streamlit.app/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Analyzed district-wise agricultural data across 30+ districts in Tamil Nadu",
             "Airport geodesic proximity engine classifying Red/Yellow/Green drone zones",
