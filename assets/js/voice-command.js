@@ -53,6 +53,7 @@ class VoiceNavEngine {
         this.recognition.onend = () => {
             this.isListening = false;
             this.updateBtnState(false);
+            setTimeout(() => this.hideVoiceHUD(), 600);
         };
     }
 
@@ -196,7 +197,7 @@ class VoiceNavEngine {
             this.scrollTo(targetSection);
         }
 
-        setTimeout(() => this.hideVoiceHUD(), 3500);
+        setTimeout(() => this.hideVoiceHUD(), 1200);
     }
 
     scrollTo(sectionId) {
