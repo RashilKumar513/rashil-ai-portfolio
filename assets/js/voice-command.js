@@ -20,25 +20,34 @@ class VoiceNavEngine {
 
         this.recognition = new SpeechRecognition();
         this.recognition.continuous = false;
-        this.recognition.interimResults = false;
+        this.recognition.interimResults = true;
         this.recognition.lang = 'en-US';
 
         this.recognition.onstart = () => {
             this.isListening = true;
             this.updateBtnState(true);
-            this.speakFeedback("Listening for voice commands...");
+            this.showVoiceHUD("Listening for voice commands... Speak 'Internships', 'Projects', 'Services', 'Skills', or 'Contact'");
         };
 
         this.recognition.onresult = (event) => {
-            const transcript = event.results[0][0].transcript.toLowerCase().trim();
-            console.log("Voice Transcript:", transcript);
-            this.processCommand(transcript);
+            let transcript = "";
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                transcript += event.results[i][0].transcript;
+            }
+            const cleanText = transcript.toLowerCase().trim();
+            this.updateVoiceHUDTranscript(cleanText);
+
+            if (event.results[0].isFinal) {
+                this.processCommand(cleanText);
+            }
         };
 
         this.recognition.onerror = (e) => {
             console.error("Speech Recognition Error:", e);
             this.isListening = false;
             this.updateBtnState(false);
+            this.showVoiceHUD(`Voice Error: ${e.error || 'Mic Permission Needed'}`);
+            setTimeout(() => this.hideVoiceHUD(), 3000);
         };
 
         this.recognition.onend = () => {
@@ -48,36 +57,70 @@ class VoiceNavEngine {
     }
 
     initUI() {
-        // Create Mic Button in Header if navbar exists
+        // Create HUD Modal Panel if missing
+        if (!document.getElementById("cyber-voice-hud")) {
+            const hud = document.createElement("div");
+            hud.id = "cyber-voice-hud";
+            hud.style.display = "none";
+            hud.style.position = "fixed";
+            hud.style.bottom = "30px";
+            hud.style.right = "30px";
+            hud.style.zIndex = "9999999";
+            hud.style.padding = "1.2rem 1.6rem";
+            hud.style.borderRadius = "16px";
+            hud.style.background = "rgba(8, 13, 26, 0.95)";
+            hud.style.backdropFilter = "blur(16px)";
+            hud.style.border = "1px solid rgba(168, 85, 247, 0.5)";
+            hud.style.boxShadow = "0 0 35px rgba(168, 85, 247, 0.35)";
+            hud.style.fontFamily = "'Orbitron', sans-serif";
+            hud.style.maxWidth = "380px";
+            hud.style.color = "#FFFFFF";
+
+            hud.innerHTML = `
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 800; color: #A855F7;">
+                        <span class="pulse-dot" style="background: #A855F7;"></span> 🎙️ CYBER VOICE HUD
+                    </div>
+                    <button onclick="voiceNav.stop()" style="color: #94A3B8; background: transparent; border: none; font-size: 1rem; cursor: pointer;">✕</button>
+                </div>
+                <div id="voice-hud-msg" style="font-family: 'Space Grotesk', sans-serif; font-size: 0.88rem; color: #CBD5E1; line-height: 1.4;">
+                    Listening...
+                </div>
+                <div id="voice-hud-transcript" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #38BDF8; margin-top: 0.5rem; min-height: 20px;">
+                </div>
+            `;
+            document.body.appendChild(hud);
+        }
+
+        // Attach Header Button
         const nav = document.querySelector(".navbar");
-        if (!nav || document.getElementById("nav-voice-btn")) return;
+        if (nav && !document.getElementById("nav-voice-btn")) {
+            const voiceBtn = document.createElement("button");
+            voiceBtn.id = "nav-voice-btn";
+            voiceBtn.className = "nav-sfx-toggle";
+            voiceBtn.style.borderColor = "rgba(168, 85, 247, 0.5)";
+            voiceBtn.style.color = "#A855F7";
+            voiceBtn.style.background = "rgba(168, 85, 247, 0.12)";
+            voiceBtn.innerHTML = `[ 🎙️ VOICE NAV ]`;
+            voiceBtn.onclick = () => this.toggle();
 
-        const voiceBtn = document.createElement("button");
-        voiceBtn.id = "nav-voice-btn";
-        voiceBtn.className = "nav-sfx-toggle";
-        voiceBtn.style.borderColor = "rgba(168, 85, 247, 0.5)";
-        voiceBtn.style.color = "#A855F7";
-        voiceBtn.style.background = "rgba(168, 85, 247, 0.12)";
-        voiceBtn.innerHTML = `[ 🎙️ VOICE NAV ]`;
-        voiceBtn.onclick = () => this.toggle();
-
-        // Insert before sfx toggle or end
-        const sfxBtn = document.getElementById("nav-sfx-toggle");
-        if (sfxBtn && sfxBtn.parentNode) {
-            sfxBtn.parentNode.insertBefore(voiceBtn, sfxBtn);
-        } else {
-            nav.appendChild(voiceBtn);
+            const sfxBtn = document.getElementById("sfx-toggle-btn");
+            if (sfxBtn && sfxBtn.parentNode) {
+                sfxBtn.parentNode.insertBefore(voiceBtn, sfxBtn);
+            } else {
+                nav.appendChild(voiceBtn);
+            }
         }
     }
 
     toggle() {
         if (!this.recognition) {
-            alert("Voice Navigation requires Google Chrome or Edge browser.");
+            alert("Voice Navigation requires Google Chrome or Edge browser microphone support.");
             return;
         }
 
         if (this.isListening) {
-            this.recognition.stop();
+            this.stop();
         } else {
             try {
                 this.recognition.start();
@@ -85,6 +128,13 @@ class VoiceNavEngine {
                 console.error("Start error:", err);
             }
         }
+    }
+
+    stop() {
+        if (this.recognition && this.isListening) {
+            this.recognition.stop();
+        }
+        this.hideVoiceHUD();
     }
 
     updateBtnState(listening) {
@@ -104,36 +154,67 @@ class VoiceNavEngine {
         }
     }
 
+    showVoiceHUD(msg) {
+        const hud = document.getElementById("cyber-voice-hud");
+        const msgEl = document.getElementById("voice-hud-msg");
+        if (hud) hud.style.display = "block";
+        if (msgEl) msgEl.innerText = msg;
+    }
+
+    updateVoiceHUDTranscript(text) {
+        const tr = document.getElementById("voice-hud-transcript");
+        if (tr) tr.innerText = text ? `"${text}"` : "";
+    }
+
+    hideVoiceHUD() {
+        const hud = document.getElementById("cyber-voice-hud");
+        if (hud) hud.style.display = "none";
+    }
+
     processCommand(cmd) {
-        if (window.cyberSFX) window.cyberSFX.playClickSFX();
+        if (window.cyberSFX && typeof window.cyberSFX.playClickSFX === "function") {
+            window.cyberSFX.playClickSFX();
+        }
+
+        let feedback = "";
+        let targetSection = null;
 
         if (cmd.includes("internship") || cmd.includes("experience") || cmd.includes("vault") || cmd.includes("journey")) {
-            this.speakFeedback("Navigating to Planet CHRONETHIS - 13 Verified Internships");
-            this.scrollTo("journey");
+            feedback = "Navigating to Planet CHRONETHIS - 13 Verified Internships";
+            targetSection = "journey";
         } else if (cmd.includes("project") || cmd.includes("work") || cmd.includes("code") || cmd.includes("creation")) {
-            this.speakFeedback("Navigating to Planet ARCANEX - 7 Production Projects");
-            this.scrollTo("projects");
+            feedback = "Navigating to Planet ARCANEX - 7 Production Projects";
+            targetSection = "projects";
         } else if (cmd.includes("service") || cmd.includes("certificate") || cmd.includes("event") || cmd.includes("bulk")) {
-            this.speakFeedback("Navigating to Planet CREDENX - Certificate and Event Services");
-            this.scrollTo("services");
+            feedback = "Navigating to Planet CREDENX - Certificate and Event Services";
+            targetSection = "services";
         } else if (cmd.includes("skill") || cmd.includes("stack") || cmd.includes("python") || cmd.includes("react")) {
-            this.speakFeedback("Navigating to Planet FORGEVYN - Technical and AI Skill Matrix");
-            this.scrollTo("skills");
+            feedback = "Navigating to Planet FORGEVYN - Technical and AI Skill Matrix";
+            targetSection = "skills";
         } else if (cmd.includes("education") || cmd.includes("gpa") || cmd.includes("college") || cmd.includes("attendance")) {
-            this.speakFeedback("Navigating to Planet SCHOLIRA - Academics and 100% Attendance");
-            this.scrollTo("education");
+            feedback = "Navigating to Planet SCHOLIRA - Academics and 100% Attendance";
+            targetSection = "education";
         } else if (cmd.includes("contact") || cmd.includes("hire") || cmd.includes("email") || cmd.includes("reach")) {
-            this.speakFeedback("Navigating to Planet SIGNALYX - Direct Recruiter Outreach");
-            this.scrollTo("contact");
+            feedback = "Navigating to Planet SIGNALYX - Direct Recruiter Outreach";
+            targetSection = "contact";
         } else if (cmd.includes("pitch") || cmd.includes("audio") || cmd.includes("voice")) {
-            this.speakFeedback("Playing 30 second Executive Audio Pitch");
+            feedback = "Playing 30 second Executive Audio Pitch";
             if (typeof toggleExecutivePitch === "function") toggleExecutivePitch();
         } else if (cmd.includes("galaxy") || cmd.includes("3d") || cmd.includes("solar")) {
-            this.speakFeedback("Toggling 3D Solar System Galaxy View");
+            feedback = "Toggling 3D Solar System Galaxy View";
             if (typeof toggleGalaxy3DMode === "function") toggleGalaxy3DMode();
         } else {
-            this.speakFeedback(`Command recognized: ${cmd}. Try asking for internships, projects, or services.`);
+            feedback = `Command recognized: "${cmd}". Try saying 'Internships', 'Projects', or 'Services'.`;
         }
+
+        this.showVoiceHUD(feedback);
+        this.speakFeedback(feedback);
+
+        if (targetSection) {
+            this.scrollTo(targetSection);
+        }
+
+        setTimeout(() => this.hideVoiceHUD(), 3500);
     }
 
     scrollTo(sectionId) {
@@ -155,8 +236,17 @@ class VoiceNavEngine {
     }
 }
 
-// Global Instance
+// Global Instance & Helper
 window.voiceNav = null;
+
+function toggleVoiceNav() {
+    if (!window.voiceNav) {
+        window.voiceNav = new VoiceNavEngine();
+    }
+    if (window.voiceNav) {
+        window.voiceNav.toggle();
+    }
+}
 
 function initVoiceNavEngine() {
     if (!window.voiceNav) {

@@ -37,7 +37,7 @@ class ResumeGeneratorEngine {
                             Customize Rashil's Resume by Candidate Role Focus
                         </h2>
                     </div>
-                    <button onclick="resumeGenerator.close()" style="color: #94A3B8; background: transparent; border: none; font-size: 1.6rem; cursor: pointer; transition: color 0.2s ease;">✕</button>
+                    <button onclick="resumeGenerator.close()" style="color: #94A3B8; background: transparent; border: none; font-size: 1.6rem; cursor: pointer;">✕</button>
                 </div>
 
                 <!-- ROLE FOCUS TABS -->
@@ -49,19 +49,19 @@ class ResumeGeneratorEngine {
                         🤖 AI, ML & RAG Vector Focus
                     </button>
                     <button class="filter-tab-btn" id="res-tab-fullstack" onclick="resumeGenerator.filter('fullstack')">
-                        ⚡ Full Stack MERN & Web Security Focus
+                        ⚡ Full Stack MERN Focus
                     </button>
                     <button class="filter-tab-btn" id="res-tab-data" onclick="resumeGenerator.filter('data')">
-                        📊 Data Analyst & Quality Focus
+                        📊 Data Analyst Focus
                     </button>
                     <button class="filter-tab-btn" id="res-tab-leadership" onclick="resumeGenerator.filter('leadership')">
-                        👥 Leadership, HR Ops & Event Operations Focus
+                        👥 Leadership & Ops Focus
                     </button>
                 </div>
 
                 <!-- LIVE PREVIEW CONTAINER -->
                 <div id="resume-preview-box" style="background: #FFFFFF; color: #0F172A; padding: 2.5rem; border-radius: 14px; font-family: 'Inter', sans-serif; font-size: 0.88rem; line-height: 1.55; box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
-                    <!-- Dynamic Elaborate Resume Content Rendered Here -->
+                    <!-- Dynamic Content -->
                 </div>
 
                 <!-- FOOTER ACTIONS -->
@@ -81,8 +81,14 @@ class ResumeGeneratorEngine {
     }
 
     open() {
-        if (window.cyberSFX) window.cyberSFX.playClickSFX();
-        const modal = document.getElementById("resume-generator-modal");
+        if (window.cyberSFX && typeof window.cyberSFX.playClickSFX === "function") {
+            window.cyberSFX.playClickSFX();
+        }
+        let modal = document.getElementById("resume-generator-modal");
+        if (!modal) {
+            this.initUI();
+            modal = document.getElementById("resume-generator-modal");
+        }
         if (modal) {
             modal.style.display = "flex";
             this.renderResume();
@@ -90,13 +96,17 @@ class ResumeGeneratorEngine {
     }
 
     close() {
-        if (window.cyberSFX) window.cyberSFX.playClickSFX();
+        if (window.cyberSFX && typeof window.cyberSFX.playClickSFX === "function") {
+            window.cyberSFX.playClickSFX();
+        }
         const modal = document.getElementById("resume-generator-modal");
         if (modal) modal.style.display = "none";
     }
 
     filter(cat) {
-        if (window.cyberSFX) window.cyberSFX.playClickSFX();
+        if (window.cyberSFX && typeof window.cyberSFX.playClickSFX === "function") {
+            window.cyberSFX.playClickSFX();
+        }
         this.activeFilter = cat;
         
         document.querySelectorAll("[id^='res-tab-']").forEach(btn => btn.classList.remove("active"));
@@ -122,11 +132,10 @@ class ResumeGeneratorEngine {
         }
 
         box.innerHTML = `
-            <!-- CANDIDATE HEADER -->
-            <div style="border-bottom: 2.5 solid #2563EB; padding-bottom: 1.2rem; margin-bottom: 1.4rem;">
+            <div style="border-bottom: 2.5px solid #2563EB; padding-bottom: 1.2rem; margin-bottom: 1.4rem;">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
                     <div>
-                        <h1 style="font-size: 1.85rem; font-weight: 900; color: #0F172A; text-transform: uppercase; margin: 0; letter-spacing: 0.02em;">RASHIL KUMAR SURESH KUMAR</h1>
+                        <h1 style="font-size: 1.85rem; font-weight: 900; color: #0F172A; text-transform: uppercase; margin: 0;">RASHIL KUMAR SURESH KUMAR</h1>
                         <p style="font-size: 1rem; font-weight: 800; color: #2563EB; margin-top: 0.25rem;">
                             AI & MERN Full-Stack Engineer | Panimalar Engineering College (B.Tech AI & DS)
                         </p>
@@ -146,9 +155,8 @@ class ResumeGeneratorEngine {
                 </div>
             </div>
 
-            <!-- EXECUTIVE SUMMARY -->
             <div style="margin-bottom: 1.4rem;">
-                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem; letter-spacing: 0.04em;">
+                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem;">
                     EXECUTIVE CANDIDATE SUMMARY
                 </h3>
                 <p style="font-size: 0.86rem; color: #334155; margin: 0; line-height: 1.6;">
@@ -156,9 +164,8 @@ class ResumeGeneratorEngine {
                 </p>
             </div>
 
-            <!-- CORE SKILL MATRIX & COMPETENCIES -->
             <div style="margin-bottom: 1.4rem;">
-                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem; letter-spacing: 0.04em;">
+                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem;">
                     TECHNICAL SKILLS & ENGINEERING COMPETENCIES
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.85rem; font-size: 0.82rem;">
@@ -177,28 +184,26 @@ class ResumeGeneratorEngine {
                 </div>
             </div>
 
-            <!-- VERIFIED EXPERIENCE SECTION -->
             <div style="margin-bottom: 1.4rem;">
-                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.85rem; letter-spacing: 0.04em;">
+                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.85rem;">
                     VERIFIED WORK EXPERIENCE (${filteredItems.length} RELEVANT INTERNSHIPS)
                 </h3>
                 ${filteredItems.map(item => `
-                    <div style="margin-bottom: 1rem; padding-bottom: 0.85rem; border-bottom: 1px stroke #E2E8F0;">
+                    <div style="margin-bottom: 1rem; padding-bottom: 0.85rem; border-bottom: 1px solid #E2E8F0;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; font-weight: 800; color: #0F172A; font-size: 0.9rem;">
                             <span>${item.title} <span style="color: #2563EB;">@ ${item.organization}</span></span>
                             <span style="color: #64748B; font-size: 0.8rem; font-weight: 600;">${item.period} | ${item.location}</span>
                         </div>
                         <p style="font-size: 0.84rem; color: #334155; margin: 0.3rem 0; line-height: 1.5;">${item.description}</p>
                         <div style="font-size: 0.78rem; color: #1E40AF; font-weight: 700;">
-                            Core Tech & Skills: ${item.skills.join(" • ")} | <span style="color: #059669;">Verification Hash: ${item.hash} (${item.status})</span>
+                            Skills: ${item.skills.join(" • ")} | <span style="color: #059669;">Verification Hash: ${item.hash} (${item.status})</span>
                         </div>
                     </div>
                 `).join("")}
             </div>
 
-            <!-- ACADEMIC DISTINCTION & CERTIFICATE SERVICES -->
             <div>
-                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem; letter-spacing: 0.04em;">
+                <h3 style="font-size: 0.98rem; font-weight: 900; color: #0F172A; text-transform: uppercase; border-bottom: 1.5px solid #CBD5E1; padding-bottom: 0.35rem; margin-bottom: 0.65rem;">
                     ACADEMIC DISTINCTION & ENTERPRISE SERVICES
                 </h3>
                 <div style="font-size: 0.84rem; color: #334155;">
@@ -214,11 +219,20 @@ class ResumeGeneratorEngine {
     }
 }
 
-// Global Instance
+// Global Instance & Helper
 window.resumeGenerator = null;
 
+function openCustomResume() {
+    if (!window.resumeGenerator) {
+        window.resumeGenerator = new ResumeGeneratorEngine();
+    }
+    if (window.resumeGenerator) {
+        window.resumeGenerator.open();
+    }
+}
+
 function initResumeGeneratorEngine() {
-    if (!window.galaxy3D && !window.resumeGenerator) {
+    if (!window.resumeGenerator) {
         window.resumeGenerator = new ResumeGeneratorEngine();
     }
 }

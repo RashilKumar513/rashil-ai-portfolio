@@ -53,7 +53,7 @@ function renderHero() {
                     <a href="${profileData.resume}" class="pec-btn pec-btn-pill-white" target="_blank" rel="noopener noreferrer">
                         <i data-lucide="file-text"></i> DOWNLOAD RESUME PDF
                     </a>
-                    <button class="pec-btn pec-btn-outline" style="border-color: #38BDF8; color: #38BDF8; background: rgba(56, 189, 248, 0.12);" onclick="resumeGenerator.open()">
+                    <button class="pec-btn pec-btn-outline" style="border-color: #38BDF8; color: #38BDF8; background: rgba(56, 189, 248, 0.12);" onclick="openCustomResume()">
                         <i data-lucide="sliders"></i> CUSTOM TAILORED RESUME 📄
                     </button>
                 </div>
