@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D1A"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#EC4899"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect x="50" y="40" width="700" height="370" rx="16" fill="#0A101D" stroke="rgba(236, 72, 153, 0.4)" stroke-width="2"/>
+  <circle cx="90" cy="75" r="7" fill="#F43F5E"/>
+  <circle cx="115" cy="75" r="7" fill="#F59E0B"/>
+  <circle cx="140" cy="75" r="7" fill="#10B981"/>
+  <text x="175" y="80" fill="#E2E8F0" font-family="'Orbitron', sans-serif" font-size="14" font-weight="700">STUDENT STRESS ANALYSER · STREAMLIT AI ENGINE</text>
+  <path d="M 100 280 Q 200 150 300 260 T 500 180 T 700 220" fill="none" stroke="url(#glow)" stroke-width="4"/>
+  <circle cx="300" cy="260" r="8" fill="#EC4899"/>
+  <circle cx="500" cy="180" r="8" fill="#A855F7"/>
+  <rect x="100" y="320" width="160" height="45" rx="8" fill="rgba(236, 72, 153, 0.15)" stroke="rgba(236, 72, 153, 0.4)"/>
+  <text x="120" y="347" fill="#EC4899" font-family="sans-serif" font-size="12" font-weight="700">STRESS RISK: LOW</text>
+  <rect x="280" y="320" width="220" height="45" rx="8" fill="rgba(168, 85, 247, 0.15)" stroke="rgba(168, 85, 247, 0.4)"/>
+  <text x="300" y="347" fill="#A855F7" font-family="sans-serif" font-size="12" font-weight="700">WELLNESS SCORE: 88/100</text>
+  <rect x="520" y="320" width="180" height="45" rx="8" fill="rgba(56, 189, 248, 0.15)" stroke="rgba(56, 189, 248, 0.4)"/>
+  <text x="540" y="347" fill="#38BDF8" font-family="sans-serif" font-size="12" font-weight="700">STREAMLIT DEPLOYED</text>
+</svg>

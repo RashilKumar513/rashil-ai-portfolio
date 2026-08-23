@@ -42,7 +42,7 @@ const profileData = {
         },
         {
             icon: "folder-kanban",
-            value: "7+",
+            value: "8+",
             title: "Major Projects",
             description: "Production-grade web & AI systems"
         },

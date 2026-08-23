@@ -4,6 +4,39 @@
 
 const projectsData = [
     {
+        id: "student-stress-analyser",
+        title: "Student Stress Analyser",
+        category: "AI / Cloud",
+        featured: true,
+        summary: "AI-powered web application analyzing student academic stress levels, mental wellness indicators, and burnout metrics using machine learning models.",
+        description: "Engineered an interactive AI application deployed on Streamlit analyzing student stress patterns, workload intensity, sleep quality, and academic pressure metrics. Features real-time ML stress risk scoring, personalized coping recommendations, and interactive data visualization charts.",
+        technologies: ["Python", "Streamlit", "Machine Learning", "Scikit-Learn", "Pandas", "Plotly"],
+        image: "assets/images/stress-analyser-preview.svg",
+        github: "https://github.com/RashilKumar513/student-stress-ai",
+        demo: "https://student-stress-ai.streamlit.app/",
+        caseStudy: "pages/future-project.html",
+        highlights: [
+            "Deployed live interactive AI application on Streamlit Cloud",
+            "Real-time machine learning stress risk prediction engine",
+            "Multi-attribute analysis: sleep hours, GPA pressure, workload & screen time",
+            "Interactive Plotly visualization dashboards & personalized wellness recommendations"
+        ],
+        preview: {
+            architecture: "Streamlit UI -> Pandas Preprocessing -> Scikit-Learn ML Model -> Plotly Interactive Visualizer",
+            keyMetrics: [
+                { label: "Deployment", value: "Streamlit Cloud" },
+                { label: "ML Model", value: "Risk Classifier" },
+                { label: "Visualizer", value: "Plotly Charts" }
+            ],
+            features: [
+                "Real-time student stress level assessment",
+                "Workload vs sleep correlation analysis",
+                "Personalized AI mental wellness & coping strategies",
+                "Instant live demo link and open-source GitHub repository"
+            ]
+        }
+    },
+    {
         id: "ai-lecture-notes",
         title: "AI Lecture to Notes Generator",
         category: "AI / Cloud",
