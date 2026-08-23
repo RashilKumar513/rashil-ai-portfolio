@@ -454,7 +454,7 @@ function renderServices() {
                         </div>
 
                         <div class="service-card-footer">
-                            <button class="service-cta-btn" style="background: ${srv.color}20; color: ${srv.color}; border: 1px solid ${srv.color}45;" onclick="requestServiceInquiry('${srv.chatPrompt}')">
+                            <button class="service-cta-btn" style="background: ${srv.color}20; color: ${srv.color}; border: 1px solid ${srv.color}45;" onclick="requestServiceInquiry(\`${srv.chatPrompt.replace(/`/g, '\\\`')}\`)">
                                 Request Service / Order Demo ↗
                             </button>
                         </div>
@@ -466,6 +466,9 @@ function renderServices() {
 }
 
 function requestServiceInquiry(personalizedPrompt) {
+    if (window.cyberSFX && typeof window.cyberSFX.playClickSFX === "function") {
+        window.cyberSFX.playClickSFX();
+    }
     if (typeof scrollToSection === "function") {
         scrollToSection("contact");
     }
