@@ -144,9 +144,9 @@ const projectsData = [
         description: "Engineered a local retrieval-augmented generation (RAG) system processing uploaded PDF documents. Performs text extraction, chunking, and local vector embeddings using sentence-transformers (all-MiniLM-L6-v2) and ChromaDB, coupled with Ollama llama3.2 query decomposition.",
         technologies: ["Python", "Streamlit", "ChromaDB", "Sentence Transformers", "Ollama (llama3.2)", "pypdf"],
         image: "assets/images/rag-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/Document_Based_Chatbot",
+        demo: "https://document-based-chatbot.streamlit.app/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Local vector search with ChromaDB and SentenceTransformer (all-MiniLM-L6-v2)",
             "Query decomposition splitting complex questions with Ollama llama3.2",
