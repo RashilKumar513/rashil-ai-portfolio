@@ -13,7 +13,7 @@ const projectsData = [
         technologies: ["Python 3.8+", "Flask / Web Framework", "SQLAlchemy ORM", "SQLite / PostgreSQL", "REST APIs", "CRUD Engine"],
         image: "assets/images/hotel-preview.svg",
         github: "https://github.com/RashilKumar513/Hotel-Reservation-System",
-        demo: "https://github.com/RashilKumar513/Hotel-Reservation-System",
+        demo: "https://hotel-reservation-system.streamlit.app/",
         caseStudy: "pages/future-project.html",
         highlights: [
             "Date-range room availability search engine & booking lifecycle management (create, view, update, cancel)",
