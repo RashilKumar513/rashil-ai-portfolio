@@ -4,6 +4,39 @@
 
 const projectsData = [
     {
+        id: "hotel-reservation-system",
+        title: "Hotel Reservation System",
+        category: "Full Stack",
+        featured: true,
+        summary: "Python-based Hotel Reservation System for managing hotels, rooms, customers, availability search by date range, and booking lifecycles.",
+        description: "Built a Python backend application for managing hotel inventories, room categories, customer registration, and booking lifecycles (create, view, update, cancel). Powered by SQLAlchemy ORM and relational database architecture with clean execution via python app.py.",
+        technologies: ["Python 3.8+", "Flask / Web Framework", "SQLAlchemy ORM", "SQLite / PostgreSQL", "REST APIs", "CRUD Engine"],
+        image: "assets/images/hotel-preview.svg",
+        github: "https://github.com/RashilKumar513/Hotel-Reservation-System",
+        demo: "https://github.com/RashilKumar513/Hotel-Reservation-System",
+        caseStudy: "pages/future-project.html",
+        highlights: [
+            "Date-range room availability search engine & booking lifecycle management (create, view, update, cancel)",
+            "Relational database schema with SQLAlchemy ORM handling hotels, room types, and customer profiles",
+            "Admin management interface hooks & payment gateway integration entry points",
+            "Clean CLI & server entry point initialized via python app.py"
+        ],
+        preview: {
+            architecture: "Python App (app.py) -> Flask / Web Router -> SQLAlchemy ORM -> SQLite / PostgreSQL DB Engine",
+            keyMetrics: [
+                { label: "Entry Point", value: "python app.py" },
+                { label: "ORM Layer", value: "SQLAlchemy" },
+                { label: "DB Engine", value: "SQLite / Postgres" }
+            ],
+            features: [
+                "Manage hotels, room types, and room inventories",
+                "Search room availability by date range",
+                "Create, view, update, and cancel customer bookings",
+                "Customer registration, admin hooks & payment points"
+            ]
+        }
+    },
+    {
         id: "student-stress-analyser",
         title: "Student Stress Analyser",
         category: "AI / Cloud",
