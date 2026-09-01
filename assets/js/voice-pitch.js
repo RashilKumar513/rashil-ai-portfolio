@@ -29,32 +29,38 @@ class AIVoicePitchEngine {
             // Cancel any pending speech synthesis
             this.synth.cancel();
 
-            this.utterance = new SpeechSynthesisUtterance(this.pitchText);
-            this.utterance.rate = 0.96; // Calm, clear, confident pacing
-            this.utterance.pitch = 1.06; // Sweet, warm, welcoming pitch
+            const internshipCount = typeof internshipsData !== "undefined" ? internshipsData.length : 14;
+            const projectCount = typeof projectsData !== "undefined" ? projectsData.length : 10;
+
+            const pitchText = `Greetings! Welcome to RASHIL.AI — the official cyber universe of Rashil Kumar Suresh Kumar, an elite 20-year-old Full Stack and Artificial Intelligence Engineer from Panimalar Engineering College. Rashil stands in a tier of his own: featuring ${internshipCount} verified engineering and leadership internships, ${projectCount} production-grade AI and full-stack systems, an extraordinary 100 percent verified attendance record, and a 7.7 CGPA. From building Gemini 2.5 API RAG vector search engines and OWASP security-tested platforms to crafting autonomous 3D web experiences, Rashil delivers production excellence with speed, passion, and precision. Candidate talent of this caliber is truly rare. Explore his portfolio and hire Rashil today!`;
+
+            this.utterance = new SpeechSynthesisUtterance(pitchText);
+            this.utterance.rate = 1.02; // Confident, energetic, young adult pacing
+            this.utterance.pitch = 0.95; // Natural 20-year-old male pitch tone
             this.utterance.volume = 1.0;
 
             const voices = this.synth.getVoices();
             if (voices && voices.length > 0) {
-                // Priority matching for sweet, natural English voices across Windows, Mac, Chrome & iOS
+                // Priority matching for energetic 20-year-old Male English voices across Windows, Mac, Chrome, Android & iOS
                 const preferredVoice = voices.find(v => 
                     v.lang.startsWith("en") && (
-                        v.name.includes("Jenny") || 
-                        v.name.includes("Google US English") || 
-                        v.name.includes("Samantha") || 
-                        v.name.includes("Zira") || 
-                        v.name.includes("Google UK English Female") || 
-                        v.name.includes("Karen") || 
-                        v.name.includes("Victoria") || 
-                        v.name.includes("Natural") || 
-                        v.name.includes("Enhanced")
+                        v.name.includes("Guy") || 
+                        v.name.includes("David") || 
+                        v.name.includes("Google US English Male") || 
+                        v.name.includes("Google UK English Male") || 
+                        v.name.includes("Rishi") || 
+                        v.name.includes("Alex") || 
+                        v.name.includes("Daniel") || 
+                        v.name.includes("Mark") || 
+                        v.name.includes("George") || 
+                        (v.name.includes("Male") && !v.name.includes("Female"))
                     )
                 );
                 if (preferredVoice) {
                     this.utterance.voice = preferredVoice;
                 } else {
-                    const anyEnglish = voices.find(v => v.lang.startsWith("en"));
-                    if (anyEnglish) this.utterance.voice = anyEnglish;
+                    const anyMale = voices.find(v => v.lang.startsWith("en") && !v.name.toLowerCase().includes("female") && !v.name.toLowerCase().includes("zira") && !v.name.toLowerCase().includes("hazel") && !v.name.toLowerCase().includes("samantha"));
+                    if (anyMale) this.utterance.voice = anyMale;
                 }
             }
 
