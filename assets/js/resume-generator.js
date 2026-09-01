@@ -65,11 +65,8 @@ class ResumeGeneratorEngine {
                 </div>
 
                 <!-- FOOTER ACTIONS -->
-                <div style="display: flex; gap: 1rem; margin-top: 1.75rem; justify-content: flex-end; flex-wrap: wrap;">
-                    <button onclick="window.print()" class="btn-glowing" style="padding: 0.85rem 1.85rem !important; font-size: 0.88rem !important; width: auto !important;">
-                        🖨️ PRINT / EXPORT AS PDF
-                    </button>
-                    <button onclick="resumeGenerator.close()" class="project-btn project-btn-demo" style="padding: 0.85rem 1.4rem; font-size: 0.88rem;">
+                <div style="display: flex; justify-content: center; margin-top: 1.75rem;">
+                    <button onclick="resumeGenerator.close()" class="btn-glowing" style="padding: 0.85rem 2.5rem !important; font-size: 0.88rem !important; width: auto !important;">
                         CLOSE PREVIEW
                     </button>
                 </div>
@@ -222,22 +219,25 @@ class ResumeGeneratorEngine {
 
         box.innerHTML = `
             <!-- CANDIDATE HEADER -->
-            <div style="border-bottom: 2px solid rgba(56, 189, 248, 0.35); padding-bottom: 1.2rem; margin-bottom: 1.4rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-                    <div>
-                        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 1.85rem; font-weight: 900; color: #FFFFFF; text-transform: uppercase; margin: 0; letter-spacing: 0.03em;">RASHIL KUMAR SURESH KUMAR</h1>
-                        <p style="font-size: 1rem; font-weight: 700; color: #38BDF8; margin-top: 0.3rem;">
+            <div style="border-bottom: 2px solid rgba(56, 189, 248, 0.35); padding-bottom: 1.25rem; margin-bottom: 1.5rem;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div style="flex: 1; min-width: 280px;">
+                        <h1 style="font-family: 'Orbitron', sans-serif; font-size: 1.75rem; font-weight: 900; color: #FFFFFF; text-transform: uppercase; margin: 0; letter-spacing: 0.03em; line-height: 1.2;">
+                            RASHIL KUMAR SURESH KUMAR
+                        </h1>
+                        <p style="font-size: 0.95rem; font-weight: 700; color: #38BDF8; margin-top: 0.4rem; margin-bottom: 0;">
                             ${roleTitle} | Panimalar Engineering College (B.Tech AI & DS)
                         </p>
                     </div>
-                    <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.6rem 1rem; border-radius: 12px; font-size: 0.8rem; text-align: right; font-weight: 700; color: #E2E8F0;">
+
+                    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.6rem 1.1rem; border-radius: 12px; font-size: 0.78rem; text-align: right; font-weight: 700; color: #E2E8F0; flex-shrink: 0;">
                         <div>⭐ <strong style="color: #38BDF8;">${typeof internshipsData !== 'undefined' ? internshipsData.length : 14} Verified Internships</strong></div>
                         <div>🚀 <strong style="color: #A855F7;">${typeof projectsData !== 'undefined' ? projectsData.length : 10}+ Production Projects</strong></div>
                         <div>🏅 <strong style="color: #34D399;">100% Verified Attendance (7.7 CGPA)</strong></div>
                     </div>
                 </div>
 
-                <div style="font-size: 0.82rem; color: #94A3B8; margin-top: 0.8rem; display: flex; gap: 1.25rem; flex-wrap: wrap; font-weight: 600;">
+                <div style="font-size: 0.82rem; color: #94A3B8; display: flex; gap: 1.2rem; flex-wrap: wrap; font-weight: 600; padding-top: 0.6rem; border-top: 1px dashed rgba(255, 255, 255, 0.12);">
                     <span>📧 rashidrashil2006@gmail.com</span>
                     <span>🔗 linkedin.com/in/rashil-kumar-suresh-kumar</span>
                     <span>💻 github.com/RashilKumar513</span>
