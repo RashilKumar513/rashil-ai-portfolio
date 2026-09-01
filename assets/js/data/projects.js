@@ -5,7 +5,7 @@
 const projectsData = [
     {
         id: "rashil-ai-portfolio",
-        title: "RASHIL.AI - Autonomous 3D Cyber Portfolio Engine",
+        title: "RASHIL.AI 3D Cyber Portfolio",
         category: "Full Stack",
         featured: true,
         summary: "World-First 3D Solar System Cyber Portfolio platform featuring AI Recruiter Assistant, Live Custom Tailored Resume Generator, Cyber Voice Command HUD, and 14 Verified Internships Vault.",
