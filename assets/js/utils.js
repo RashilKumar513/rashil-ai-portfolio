@@ -13,6 +13,10 @@ function getElement(id) {
  * Smooth scroll to element by ID with sticky header clearance offset
  */
 function scrollToSection(id) {
+    if (id === "hero" || id === "nexara") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+    }
     const target = document.getElementById(id);
     if (!target) return;
 

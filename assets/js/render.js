@@ -719,7 +719,7 @@ function renderContact() {
                 <span class="pec-subtitle planet-tagline">DISCUSS ENGINEERING OPPORTUNITIES & COLLABORATIONS</span>
             </div>
 
-            <div class="contact-card-main-seamless">
+            <div class="contact-card-main glass-featured" data-spotlight>
                 <div class="contact-grid">
                     <!-- Left: Headline & Direct Contact Links -->
                     <div class="contact-info-col">

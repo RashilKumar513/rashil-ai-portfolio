@@ -114,16 +114,8 @@ function initPreloader() {
 
     let progress = 0;
     let messageIdx = 0;
-    const duration = 750; // 0.75s fast load
+    const duration = 1400; // 1.4 seconds smooth load
     const startTime = performance.now();
-
-    // Safety fallback auto-dismiss after 1.1s max
-    setTimeout(() => {
-        if (preloader && preloader.style.display !== "none") {
-            preloader.classList.add("loaded");
-            setTimeout(() => { preloader.style.display = "none"; }, 300);
-        }
-    }, 1100);
 
     function updatePreloader(now) {
         const elapsedTime = now - startTime;
@@ -147,8 +139,8 @@ function initPreloader() {
                 preloader.classList.add("loaded");
                 setTimeout(() => {
                     preloader.style.display = "none";
-                }, 300);
-            }, 150);
+                }, 400);
+            }, 250);
         }
     }
 
