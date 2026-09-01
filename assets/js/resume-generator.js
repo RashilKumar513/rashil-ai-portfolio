@@ -127,9 +127,15 @@ class ResumeGeneratorEngine {
         if (this.activeFilter === "ai") {
             roleTitle = "AI, Deep Learning & RAG Vector Specialist";
             summaryText = "Specialized AI/ML Candidate with hands-on research and engineering experience building Gemini 2.5 API RAG vector stores, ChromaDB semantic search engines, OpenCV computer vision pipelines, and Hawking Defense drone object detection algorithms.";
-            filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("ai") || s.toLowerCase().includes("deep") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("learning") || s.toLowerCase().includes("cloud")));
+            filteredItems = internshipsData.filter(i => i.category === "technical" && (
+                i.title.toLowerCase().includes("aiml") || 
+                i.title.toLowerCase().includes("data analyst") || 
+                i.title.toLowerCase().includes("ai & cloud") ||
+                i.title.toLowerCase().includes("microsoft elevate") ||
+                i.skills.some(s => s.toLowerCase() === "object detection" || s.toLowerCase().includes("deep learning") || s.toLowerCase().includes("drone ai") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("ai cloud") || s.toLowerCase().includes("predictive modeling"))
+            ));
             if (typeof projectsData !== "undefined") {
-                filteredProjects = projectsData.filter(p => p.category === "AI / Cloud" || p.technologies.some(t => t.toLowerCase().includes("ai") || t.toLowerCase().includes("gemini") || t.toLowerCase().includes("rag") || t.toLowerCase().includes("opencv") || t.toLowerCase().includes("streamlit") || t.toLowerCase().includes("vector")));
+                filteredProjects = projectsData.filter(p => p.category === "AI / Cloud" || p.technologies.some(t => t.toLowerCase().includes("gemini") || t.toLowerCase().includes("rag") || t.toLowerCase().includes("opencv") || t.toLowerCase().includes("streamlit") || t.toLowerCase().includes("sentence transformers")));
             }
             
             skillsGridHTML = `
@@ -149,7 +155,9 @@ class ResumeGeneratorEngine {
         } else if (this.activeFilter === "fullstack") {
             roleTitle = "MERN Full-Stack & Web Security Specialist";
             summaryText = "Production-grade Full Stack Web Engineer specializing in React.js frontend performance, Node/Express microservices, MongoDB schemas, and OWASP Top 10 security standards. Developer behind 100% Best Quality automated certificate generation systems.";
-            filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("qa") || s.toLowerCase().includes("web") || s.toLowerCase().includes("security") || s.toLowerCase().includes("express")));
+            filteredItems = internshipsData.filter(i => i.category === "technical" && (
+                i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("android testing") || s.toLowerCase().includes("manual qa") || s.toLowerCase().includes("owasp") || s.toLowerCase().includes("express") || s.toLowerCase().includes("5s standards"))
+            ));
             if (typeof projectsData !== "undefined") {
                 filteredProjects = projectsData.filter(p => p.category === "Full Stack" || p.category === "Backend" || p.technologies.some(t => t.toLowerCase().includes("react") || t.toLowerCase().includes("node") || t.toLowerCase().includes("mern") || t.toLowerCase().includes("flask") || t.toLowerCase().includes("express") || t.toLowerCase().includes("three.js")));
             }
@@ -171,7 +179,9 @@ class ResumeGeneratorEngine {
         } else if (this.activeFilter === "data") {
             roleTitle = "Data Analyst & Quality Assurance Engineer";
             summaryText = "Analytical Data & Quality Specialist with hands-on experience at Beeskilled (AICTE & MSME Reg.) and Delphi TVS, mastering Python data pipelines, SQL queries, automated report generation, and 5S Lean Quality standards.";
-            filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("data") || s.toLowerCase().includes("python") || s.toLowerCase().includes("sql") || s.toLowerCase().includes("analytics") || s.toLowerCase().includes("quality") || s.toLowerCase().includes("5s")));
+            filteredItems = internshipsData.filter(i => i.category === "technical" && (
+                i.title.toLowerCase().includes("data analyst") || i.title.toLowerCase().includes("manufacturing & quality") || i.skills.some(s => s.toLowerCase().includes("data analytics") || s.toLowerCase().includes("sql") || s.toLowerCase().includes("5s standards") || s.toLowerCase().includes("lean manufacturing"))
+            ));
             if (typeof projectsData !== "undefined") {
                 filteredProjects = projectsData.filter(p => p.technologies.some(t => t.toLowerCase().includes("python") || t.toLowerCase().includes("pandas") || t.toLowerCase().includes("sql") || t.toLowerCase().includes("plotly")) || p.summary.toLowerCase().includes("analys") || p.summary.toLowerCase().includes("data"));
             }
