@@ -3683,3 +3683,100 @@ body.cursor-active .cyber-cursor-ring {
     color: #F43F5E !important;
     box-shadow: 0 0 20px rgba(244, 63, 94, 0.7) !important;
 }
+
+/* =====================================================
+   HIGH-ATS SCORE PRINT & PDF EXPORT STYLESHEET
+   Standardizes OCR parsing for Taleo, Workday, Greenhouse & Lever
+===================================================== */
+@media print {
+    body * {
+        visibility: hidden !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    #resume-generator-modal,
+    #resume-generator-modal #resume-preview-box,
+    #resume-generator-modal #resume-preview-box * {
+        visibility: visible !important;
+    }
+
+    #resume-generator-modal {
+        position: absolute !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        background: #FFFFFF !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        backdrop-filter: none !important;
+        z-index: 99999999 !important;
+    }
+
+    #resume-generator-modal > div {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #FFFFFF !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    #resume-generator-modal button,
+    #resume-generator-modal .filter-tab-btn,
+    #resume-generator-modal [onclick] {
+        display: none !important;
+    }
+
+    #resume-preview-box {
+        background: #FFFFFF !important;
+        color: #0F172A !important;
+        padding: 1.2cm !important;
+        border: none !important;
+        font-family: 'Arial', 'Calibri', 'Helvetica', sans-serif !important;
+        font-size: 9.5pt !important;
+        line-height: 1.45 !important;
+        box-shadow: none !important;
+    }
+
+    #resume-preview-box h1 {
+        color: #0F172A !important;
+        font-size: 18pt !important;
+        font-family: 'Arial', sans-serif !important;
+        margin-bottom: 3pt !important;
+    }
+
+    #resume-preview-box h2, #resume-preview-box h3 {
+        color: #0F172A !important;
+        font-size: 10.5pt !important;
+        font-family: 'Arial', sans-serif !important;
+        border-bottom: 1.5pt solid #0F172A !important;
+        padding-bottom: 2pt !important;
+        margin-top: 12pt !important;
+        margin-bottom: 5pt !important;
+        text-transform: uppercase !important;
+    }
+
+    #resume-preview-box p, #resume-preview-box div, #resume-preview-box span, #resume-preview-box li {
+        color: #1E293B !important;
+    }
+
+    #resume-preview-box .ats-card, 
+    #resume-preview-box div[style*="background"] {
+        background: #FFFFFF !important;
+        border: none !important;
+        border-left: 2pt solid #0F172A !important;
+        padding: 0.3rem 0.5rem !important;
+        margin-bottom: 0.6rem !important;
+        color: #0F172A !important;
+    }
+
+    #resume-preview-box span[style*="color"],
+    #resume-preview-box strong[style*="color"] {
+        color: #0F172A !important;
+    }
+}
