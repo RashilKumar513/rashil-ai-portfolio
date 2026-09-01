@@ -15,20 +15,17 @@ window.addEventListener('load', () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+function initApp() {
     window.scrollTo(0, 0);
-    console.log("Initializing NEXUS Developer Portfolio v2.0...");
-
-    // Initialize Interactive Ambient Canvas Network
-    if (typeof initCanvasBackground === "function") {
-        initCanvasBackground();
-    }
 
     // Render all dynamic sections from data files
     if (typeof renderAll === "function") {
         renderAll();
-    } else {
-        console.error("renderAll function not found. Ensure render.js is loaded.");
+    }
+
+    // Initialize Interactive Ambient Canvas Network
+    if (typeof initCanvasBackground === "function") {
+        initCanvasBackground();
     }
 
     // Initialize Interactive CLI Terminal
@@ -45,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof initMobileMenu === "function") {
         initMobileMenu();
     }
+}
 
-    console.log("NEXUS Portfolio successfully loaded and rendered with interactive features.");
-});
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initApp);
+} else {
+    initApp();
+}

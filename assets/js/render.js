@@ -113,7 +113,7 @@ function renderAbout() {
                     </div>
                     
                     <div class="portrait-badge-bottom">
-                        <i data-lucide="award"></i> 12 Internships
+                        <i data-lucide="award"></i> 14 Internships
                     </div>
                 </div>
 
