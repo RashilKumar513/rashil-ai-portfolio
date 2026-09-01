@@ -43,7 +43,7 @@ class ResumeGeneratorEngine {
                 <!-- ROLE FOCUS TABS -->
                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
                     <button class="filter-tab-btn active" id="res-tab-all" onclick="resumeGenerator.filter('all')">
-                        ⭐ Full Master Resume (14 Verified Internships)
+                        ⭐ Full Master Resume (${typeof internshipsData !== 'undefined' ? internshipsData.length : 14} Verified Internships)
                     </button>
                     <button class="filter-tab-btn" id="res-tab-ai" onclick="resumeGenerator.filter('ai')">
                         🤖 AI, ML & RAG Vector Focus
@@ -231,9 +231,9 @@ class ResumeGeneratorEngine {
                         </p>
                     </div>
                     <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.6rem 1rem; border-radius: 12px; font-size: 0.8rem; text-align: right; font-weight: 700; color: #E2E8F0;">
-                        <div>⭐ <strong style="color: #38BDF8;">14 Verified Internships</strong></div>
-                        <div>🏅 <strong style="color: #34D399;">100% Verified Attendance</strong></div>
-                        <div>📊 <strong style="color: #F59E0B;">7.7 / 10 CGPA</strong></div>
+                        <div>⭐ <strong style="color: #38BDF8;">${typeof internshipsData !== 'undefined' ? internshipsData.length : 14} Verified Internships</strong></div>
+                        <div>🚀 <strong style="color: #A855F7;">${typeof projectsData !== 'undefined' ? projectsData.length : 10}+ Production Projects</strong></div>
+                        <div>🏅 <strong style="color: #34D399;">100% Verified Attendance (7.7 CGPA)</strong></div>
                     </div>
                 </div>
 
@@ -283,6 +283,28 @@ class ResumeGeneratorEngine {
                         </div>
                     </div>
                 `).join("")}
+            </div>
+
+            <!-- FEATURED PRODUCTION PROJECTS -->
+            <div style="margin-bottom: 1.5rem;">
+                <h3 style="font-family: 'Orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #38BDF8; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4rem; margin-bottom: 0.95rem; letter-spacing: 0.05em;">
+                    FEATURED PRODUCTION PROJECTS (${typeof projectsData !== "undefined" ? projectsData.length : 0} MAJOR SYSTEMS)
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 0.85rem;">
+                    ${typeof projectsData !== "undefined" ? projectsData.map(proj => `
+                        <div style="background: rgba(15, 23, 42, 0.6); padding: 0.9rem 1.1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.06);">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; font-weight: 800; color: #FFFFFF; font-size: 0.88rem;">
+                                <span>${proj.title}</span>
+                                <span style="color: #F59E0B; font-size: 0.76rem;">[${proj.category}]</span>
+                            </div>
+                            <p style="font-size: 0.82rem; color: #CBD5E1; margin: 0.35rem 0; line-height: 1.5;">${proj.summary}</p>
+                            <div style="font-size: 0.76rem; color: #38BDF8; font-weight: 700; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.3rem;">
+                                <span>Stack: ${proj.technologies.slice(0, 4).join(" • ")}</span>
+                                <span style="color: #34D399;">GitHub: ${proj.github}</span>
+                            </div>
+                        </div>
+                    `).join("") : ""}
+                </div>
             </div>
 
             <!-- ACADEMICS & SERVICES -->
