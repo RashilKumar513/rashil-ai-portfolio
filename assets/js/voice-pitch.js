@@ -32,11 +32,11 @@ class AIVoicePitchEngine {
             const internshipCount = typeof internshipsData !== "undefined" ? internshipsData.length : 14;
             const projectCount = typeof projectsData !== "undefined" ? projectsData.length : 10;
 
-            const pitchText = `Greetings! Welcome to RASHIL.AI — the official cyber universe of Rashil Kumar Suresh Kumar, an elite 20-year-old Full Stack and Artificial Intelligence Engineer from Panimalar Engineering College. Rashil stands in a tier of his own: featuring ${internshipCount} verified engineering and leadership internships, ${projectCount} production-grade AI and full-stack systems, an extraordinary 100 percent verified attendance record, and a 7.7 CGPA. From building Gemini 2.5 API RAG vector search engines and OWASP security-tested platforms to crafting autonomous 3D web experiences, Rashil delivers production excellence with speed, passion, and precision. Candidate talent of this caliber is truly rare. Explore his portfolio and hire Rashil today!`;
+            const pitchText = `Hello, and welcome to RASHIL.AI! I am Rashil Kumar Suresh Kumar, a 20-year-old Artificial Intelligence and Full Stack Engineer studying at Panimalar Engineering College. What drives me every day is building high-impact technology that actually solves real-world problems. Over the course of ${internshipCount} verified internships, ${projectCount} major production systems, and a 100 percent academic attendance record with a 7.7 CGPA, I have engineered Gemini 2.5 API vector search engines, computer vision drone algorithms, and secure OWASP web applications. Whether it is leading cross-functional teams, optimizing complex data pipelines, or designing immersive 3D digital platforms, I bring relentless discipline, speed, and production quality to everything I touch. Thank you for visiting my portfolio, and I look forward to bringing this same energy, innovation, and engineering leadership to your team today!`;
 
             this.utterance = new SpeechSynthesisUtterance(pitchText);
-            this.utterance.rate = 1.02; // Confident, energetic, young adult pacing
-            this.utterance.pitch = 0.95; // Natural 20-year-old male pitch tone
+            this.utterance.rate = 0.98; // Natural, conversational human pacing
+            this.utterance.pitch = 0.96; // Resonant, confident 20-year-old male voice tone
             this.utterance.volume = 1.0;
 
             const voices = this.synth.getVoices();
