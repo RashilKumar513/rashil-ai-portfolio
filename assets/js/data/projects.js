@@ -243,9 +243,9 @@ const projectsData = [
         description: "Replaced legacy paper record-keeping with a digital web dashboard powered by Node.js, Express.js, and SQLite. Features full CRUD management, real-time KPI visualization, and operational efficiency gains of 50%.",
         technologies: ["Node.js", "Express.js", "SQLite", "REST APIs", "CRUD Operations"],
         image: "assets/images/courier-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/courier-management-system",
+        demo: "https://courier-management-system-2ntk.onrender.com/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Managed 1000+ monthly shipments through centralized digital dashboard",
             "Real-time analytics module visualizing 15+ operational KPIs",
