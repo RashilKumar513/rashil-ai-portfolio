@@ -111,9 +111,9 @@ const projectsData = [
         description: "Engineered an end-to-end rental application with 95%+ uptime. Secured payment transactions for 500+ bookings using Stripe Payment Gateway with 99.9% reliability. Optimized database performance by 40% through custom MongoDB index strategies.",
         technologies: ["MongoDB", "Express.js", "React.js", "Node.js", "Stripe API", "JWT", "Bootstrap"],
         image: "assets/images/homelyhub-preview.svg",
-        github: "https://github.com/RashilKumar513",
-        demo: "https://github.com/RashilKumar513",
-        caseStudy: "#",
+        github: "https://github.com/RashilKumar513/Homely-Hub-Project",
+        demo: "https://homely-hub-project-lake.vercel.app/",
+        caseStudy: "pages/future-project.html",
         highlights: [
             "Built platform supporting 500+ listings with 95%+ uptime",
             "Stripe Payment Gateway processing 500+ transactions with 99.9% reliability",
