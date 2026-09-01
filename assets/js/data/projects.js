@@ -13,7 +13,7 @@ const projectsData = [
         technologies: ["JavaScript (ES6+)", "Three.js / 3D Canvas", "Web Speech API", "CSS3 Glassmorphism", "AI Recruiter Engine", "Tailwind CSS"],
         image: "assets/images/portfolio-preview.svg",
         github: "https://github.com/RashilKumar513/rashil-ai-portfolio",
-        demo: "https://github.com/RashilKumar513/rashil-ai-portfolio",
+        demo: "https://rashilkumar513.github.io/rashil-ai-portfolio/",
         caseStudy: "pages/portfolio.html",
         highlights: [
             "World-First 3D Solar System Galaxy mode and interactive orbit navigation",
