@@ -54,7 +54,7 @@ class TerminalWidget {
   <span class="term-cmd">help</span>        - Displays list of commands
   <span class="term-cmd">about</span>       - Developer overview & engineering mindset
   <span class="term-cmd">skills</span>      - AI & MERN tech stack
-  <span class="term-cmd">internships</span> - 13 Verified Internship breakdown
+  <span class="term-cmd">internships</span> - 14 Verified Internship breakdown
   <span class="term-cmd">services</span>    - 100% Best Quality Certificate Services
   <span class="term-cmd">verify</span>      - Verifies HASH#PEC-2026-DA00 credential
   <span class="term-cmd">projects</span>    - Highlighted portfolio projects
@@ -65,7 +65,7 @@ class TerminalWidget {
 
             case "about":
                 response = `<span class="term-highlight">RASHIL KUMAR SURESH KUMAR</span> - AI & MERN Full-Stack Engineer
-Panimalar Engineering College (3rd Year B.Tech AI & DS) | 13 Verified Internships | 100% Verified Attendance | 7.7 CGPA`;
+Panimalar Engineering College (3rd Year B.Tech AI & DS) | 14 Verified Internships | 100% Verified Attendance | 7.7 CGPA`;
                 break;
 
             case "skills":
@@ -76,12 +76,12 @@ Panimalar Engineering College (3rd Year B.Tech AI & DS) | 13 Verified Internship
                 break;
 
             case "internships":
-                response = `<span class="term-info">13 Verified Internships (Recent to Old):</span>
-  1. Data Analyst Intern @ Beeskilled (Jul 2026 – Sep 2026)
-  2. AIML Engineering Intern @ Hawking Defense Services (Jun 2026)
-  3. Online Community Manager @ Hypedin (Dec 2025 – Jun 2026)
-  4. Administration Dept Intern @ Renu Sharma Foundation (Dec 2025 – Mar 2026)
-  ... and 9 more verified records on Planet CHRONETHIS!`;
+                response = `<span class="term-info">14 Verified Internships (Recent to Old):</span>
+  1. Operation Team Lead @ AURONEX Community (Jul 2026 – Aug 2026)
+  2. Data Analyst Intern @ Beeskilled (Jul 2026 – Sep 2026)
+  3. AIML Engineering Intern @ Hawking Defense Services (Jun 2026)
+  4. Online Community Manager @ Hypedin (Dec 2025 – Jun 2026)
+  ... and 10 more verified records on Planet CHRONETHIS!`;
                 break;
 
             case "services":

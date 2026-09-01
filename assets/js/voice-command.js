@@ -163,7 +163,7 @@ class VoiceNavEngine {
         let targetSection = null;
 
         if (cmd.includes("internship") || cmd.includes("experience") || cmd.includes("vault") || cmd.includes("journey")) {
-            feedback = "Navigating to Planet CHRONETHIS - 13 Verified Internships";
+            feedback = "Navigating to Planet CHRONETHIS - 14 Verified Internships";
             targetSection = "journey";
         } else if (cmd.includes("project") || cmd.includes("work") || cmd.includes("code") || cmd.includes("creation")) {
             feedback = "Navigating to Planet ARCANEX - 7 Production Projects";

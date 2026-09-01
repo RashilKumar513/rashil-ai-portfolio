@@ -61,7 +61,7 @@ function renderHero() {
                 <!-- PEC Hacks Countdown / Stat Cards Grid -->
                 <div class="pec-stats-row">
                     <div class="pec-stat-card hover-lift" data-spotlight>
-                        <span class="pec-stat-num" data-counter="12">12</span>
+                        <span class="pec-stat-num" data-counter="14">14</span>
                         <span class="pec-stat-lbl">VERIFIED INTERNSHIPS</span>
                     </div>
                     <div class="pec-stat-card hover-lift" data-spotlight>
@@ -605,18 +605,18 @@ function renderJourney() {
                     <span class="planet-section-label">JOURNEY · THE VERIFIED CREDENTIAL VAULT</span>
                 </div>
             </div>
-            <span class="pec-subtitle planet-tagline">13 VERIFIED INTERNSHIPS WITH CRYPTOGRAPHIC HASH & VERIFIED RECORDS</span>
+            <span class="pec-subtitle planet-tagline">14 VERIFIED INTERNSHIPS WITH CRYPTOGRAPHIC HASH & VERIFIED RECORDS</span>
             
             <!-- Category Filter Tabs for Verified Internship Vault -->
             <div class="project-filter-tabs flex-left-tabs">
                 <button class="filter-tab-btn ${activeInternshipFilter === 'all' ? 'active' : ''}" onclick="filterInternshipVault('all')">
-                    All 13 Verified Internships
+                    All ${internshipsData.length} Verified Internships
                 </button>
                 <button class="filter-tab-btn ${activeInternshipFilter === 'technical' ? 'active' : ''}" onclick="filterInternshipVault('technical')">
-                    Technical & Data Analytics (8)
+                    Technical & Data Analytics (${internshipsData.filter(i => i.category === 'technical').length})
                 </button>
                 <button class="filter-tab-btn ${activeInternshipFilter === 'leadership' ? 'active' : ''}" onclick="filterInternshipVault('leadership')">
-                    Leadership & Ops (5)
+                    Leadership & Ops (${internshipsData.filter(i => i.category === 'leadership').length})
                 </button>
             </div>
         </div>

@@ -8,7 +8,7 @@ const AI_RECRUITER_KNOWLEDGE = {
         title: "Why Hire Rashil Kumar Suresh Kumar?",
         badge: "TOP CANDIDATE SUMMARY",
         text: `<strong>Rashil is a rare high-yield candidate combining Full Stack Engineering, AI Integration, and HR Talent Sourcing experience.</strong><br><br>
-        • <strong>12 Verified Internships:</strong> Hands-on experience across full-stack development, AI model integration, and leadership.<br>
+        • <strong>14 Verified Internships:</strong> Hands-on experience across full-stack development, AI model integration, and leadership.<br>
         • <strong>100% Verified Attendance & 7.7 GPA:</strong> Proven extreme discipline, reliability, and academic consistency at Panimalar Engineering College.<br>
         • <strong>AI + MERN Stack Master:</strong> Expert in Gemini API, RAG vector stores (ChromaDB/Ollama), React, Node.js, Express, and MySQL/MongoDB.<br>
         • <strong>OWASP Security Trained:</strong> Every application is built with clean architecture, input validation, and security best practices.<br>
@@ -19,12 +19,12 @@ const AI_RECRUITER_KNOWLEDGE = {
         ]
     },
     internships: {
-        title: "12 Verified Internships Breakdown",
+        title: "14 Verified Internships Breakdown",
         badge: "WORK EXPERIENCE",
-        text: `<strong>Rashil has completed 12 internships spanning technical development, AI engineering, QA, and leadership:</strong><br><br>
-        • <strong>7 Technical / AI Roles:</strong> AI Engineering, Web Development (MERN), Python Automation, Database Architecture, and Android QA Testing.<br>
-        • <strong>5 Leadership & Operations Roles:</strong> Talent Acquisition (HR), Community Management, Strategic Marketing, and Event Coordination.<br>
-        • <strong>Recent Role:</strong> Online Community Manager completed June 2025 with stellar feedback.<br>
+        text: `<strong>Rashil has completed 14 internships spanning technical development, AI engineering, QA, and leadership:</strong><br><br>
+        • <strong>8 Technical / AI Roles:</strong> AI Engineering, Web Development (MERN), Python Automation, Database Architecture, and Android QA Testing.<br>
+        • <strong>6 Leadership & Operations Roles:</strong> AURONEX Community (Operation Team Lead), Talent Acquisition (HR), Community Management, Strategic Marketing, and Event Coordination.<br>
+        • <strong>Recent Roles:</strong> Operation Team Lead @ AURONEX & Data Analyst @ Beeskilled completed in 2026.<br>
         • <strong>Proven Work Ethic:</strong> High adaptability across agile dev teams and remote/onsite workflows.`,
         actions: [
             { label: "Explore Experience Timeline", link: "#journey" }
@@ -75,7 +75,7 @@ const AI_RECRUITER_KNOWLEDGE = {
         • 📢 <strong>Campus Ambassador & Marketing Executive @ InnoKnowvex, Shiksha Vertex & Xiartz:</strong> Led campus campaigns reaching 5,000+ students across 8 colleges, generated 200+ qualified leads, and executed 6+ workshops.<br>
         • 👥 <strong>5 Leadership & Management Roles:</strong> Combines technical engineering capability with administrative operations, team leadership, and stakeholder communication skills.`,
         actions: [
-            { label: "Explore 12-Internship Vault", link: "#journey" },
+            { label: "Explore 14-Internship Vault", link: "#journey" },
             { label: "Contact Rashil Directly", link: "#contact" }
         ]
     },
@@ -257,7 +257,7 @@ class AIRecruiterAssistant {
             case "whyHire": return "Why should I hire Rashil?";
             case "services": return "What 100% Best Quality Certificate Services does Rashil offer?";
             case "hr": return "What is his experience in HR & Talent Acquisition?";
-            case "internships": return "Tell me about his 12 internships.";
+            case "internships": return "Tell me about his 14 internships.";
             case "education": return "What is his GPA & attendance record?";
             case "skills": return "What is his technical & AI skill stack?";
             case "contact": return "How can I contact Rashil directly?";

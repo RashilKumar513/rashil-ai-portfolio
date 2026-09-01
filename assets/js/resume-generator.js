@@ -43,7 +43,7 @@ class ResumeGeneratorEngine {
                 <!-- ROLE FOCUS TABS -->
                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
                     <button class="filter-tab-btn active" id="res-tab-all" onclick="resumeGenerator.filter('all')">
-                        ⭐ Full Master Resume (13 Verified Internships)
+                        ⭐ Full Master Resume (14 Verified Internships)
                     </button>
                     <button class="filter-tab-btn" id="res-tab-ai" onclick="resumeGenerator.filter('ai')">
                         🤖 AI, ML & RAG Vector Focus
@@ -122,7 +122,7 @@ class ResumeGeneratorEngine {
 
         let filteredItems = internshipsData;
         let roleTitle = "AI & MERN Full-Stack Engineer";
-        let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 13 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
+        let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 14 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
         
         let skillsGridHTML = "";
 
@@ -231,7 +231,7 @@ class ResumeGeneratorEngine {
                         </p>
                     </div>
                     <div style="background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.6rem 1rem; border-radius: 12px; font-size: 0.8rem; text-align: right; font-weight: 700; color: #E2E8F0;">
-                        <div>⭐ <strong style="color: #38BDF8;">13 Verified Internships</strong></div>
+                        <div>⭐ <strong style="color: #38BDF8;">14 Verified Internships</strong></div>
                         <div>🏅 <strong style="color: #34D399;">100% Verified Attendance</strong></div>
                         <div>📊 <strong style="color: #F59E0B;">7.7 / 10 CGPA</strong></div>
                     </div>

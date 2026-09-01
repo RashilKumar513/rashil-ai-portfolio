@@ -1,9 +1,9 @@
 /* =====================================================
-   NEXUS Portfolio - Journey Data (All 12 Verified Internships)
+   NEXUS Portfolio - Journey Data (All 14 Verified Internships)
 ===================================================== */
 
 const journeyData = [
-    // --- TECH & AI INTERNSHIPS ---
+    // --- TECH & AI & MANAGEMENT INTERNSHIPS ---
     {
         year: "Jul 2026 – Sep 2026",
         title: "Data Analyst Intern",
@@ -12,6 +12,15 @@ const journeyData = [
         description: "Executing data analytics projects, statistical modeling, and data visualization pipelines for AICTE & MSME registered Beeskilled platform.",
         tags: ["Data Analyst", "AICTE & MSME", "Python", "SQL Data Viz", "Predictive Analytics"],
         icon: "bar-chart-2"
+    },
+    {
+        year: "Jul 2026 – Aug 2026",
+        title: "Operation Team Lead Intern",
+        role: "AURONEX Community",
+        category: "Management",
+        description: "Serving as Operation Team Lead supporting community initiatives, managing operational workflows, onboarding schedules, and process logistics for AURONEX Community.",
+        tags: ["Operation Team Lead", "AURONEX Community", "Operations Management", "Team Leadership", "Remote"],
+        icon: "users"
     },
     {
         year: "Jun 2026",

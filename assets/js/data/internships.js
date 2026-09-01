@@ -1,9 +1,23 @@
 /* =====================================================
-   RASHIL.AI - 13 Real Verified Internships Dataset
+   RASHIL.AI - 14 Real Verified Internships Dataset
    Sorted Chronologically: RECENT TO OLD
 ===================================================== */
 
 const internshipsData = [
+    {
+        id: "int-auronex",
+        title: "Operation Team Lead Intern",
+        organization: "AURONEX Community",
+        category: "leadership",
+        period: "Jul 2026 – Aug 2026",
+        location: "Online / Remote",
+        hash: "HASH#PEC-2026-AUR00",
+        badge: "VERIFIED LEADERSHIP",
+        color: "#F59E0B",
+        skills: ["Operations Management", "Team Leadership", "Community Initiatives", "Process Optimization", "Cross-Functional Coordination"],
+        description: "Serving as Operation Team Lead supporting community initiatives, managing operational workflows, onboarding schedules, and process logistics for AURONEX Community.",
+        status: "✔ VERIFIED RECORD"
+    },
     {
         id: "int-00",
         title: "Data Analyst Intern",
