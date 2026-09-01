@@ -118,6 +118,7 @@ class ResumeGeneratorEngine {
         if (!box || typeof internshipsData === "undefined") return;
 
         let filteredItems = internshipsData;
+        let filteredProjects = typeof projectsData !== "undefined" ? projectsData : [];
         let roleTitle = "AI & MERN Full-Stack Engineer";
         let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 14 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
         
@@ -127,6 +128,9 @@ class ResumeGeneratorEngine {
             roleTitle = "AI, Deep Learning & RAG Vector Specialist";
             summaryText = "Specialized AI/ML Candidate with hands-on research and engineering experience building Gemini 2.5 API RAG vector stores, ChromaDB semantic search engines, OpenCV computer vision pipelines, and Hawking Defense drone object detection algorithms.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("ai") || s.toLowerCase().includes("deep") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("learning") || s.toLowerCase().includes("cloud")));
+            if (typeof projectsData !== "undefined") {
+                filteredProjects = projectsData.filter(p => p.category === "AI / Cloud" || p.technologies.some(t => t.toLowerCase().includes("ai") || t.toLowerCase().includes("gemini") || t.toLowerCase().includes("rag") || t.toLowerCase().includes("opencv") || t.toLowerCase().includes("streamlit") || t.toLowerCase().includes("vector")));
+            }
             
             skillsGridHTML = `
                 <div style="background: rgba(56, 189, 248, 0.1); padding: 0.85rem 1.1rem; border-radius: 10px; border-left: 4px solid #38BDF8; grid-column: span 2;">
@@ -146,6 +150,9 @@ class ResumeGeneratorEngine {
             roleTitle = "MERN Full-Stack & Web Security Specialist";
             summaryText = "Production-grade Full Stack Web Engineer specializing in React.js frontend performance, Node/Express microservices, MongoDB schemas, and OWASP Top 10 security standards. Developer behind 100% Best Quality automated certificate generation systems.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("qa") || s.toLowerCase().includes("web") || s.toLowerCase().includes("security") || s.toLowerCase().includes("express")));
+            if (typeof projectsData !== "undefined") {
+                filteredProjects = projectsData.filter(p => p.category === "Full Stack" || p.category === "Backend" || p.technologies.some(t => t.toLowerCase().includes("react") || t.toLowerCase().includes("node") || t.toLowerCase().includes("mern") || t.toLowerCase().includes("flask") || t.toLowerCase().includes("express") || t.toLowerCase().includes("three.js")));
+            }
             
             skillsGridHTML = `
                 <div style="background: rgba(52, 211, 153, 0.1); padding: 0.85rem 1.1rem; border-radius: 10px; border-left: 4px solid #34D399; grid-column: span 2;">
@@ -165,6 +172,9 @@ class ResumeGeneratorEngine {
             roleTitle = "Data Analyst & Quality Assurance Engineer";
             summaryText = "Analytical Data & Quality Specialist with hands-on experience at Beeskilled (AICTE & MSME Reg.) and Delphi TVS, mastering Python data pipelines, SQL queries, automated report generation, and 5S Lean Quality standards.";
             filteredItems = internshipsData.filter(i => i.skills.some(s => s.toLowerCase().includes("data") || s.toLowerCase().includes("python") || s.toLowerCase().includes("sql") || s.toLowerCase().includes("analytics") || s.toLowerCase().includes("quality") || s.toLowerCase().includes("5s")));
+            if (typeof projectsData !== "undefined") {
+                filteredProjects = projectsData.filter(p => p.technologies.some(t => t.toLowerCase().includes("python") || t.toLowerCase().includes("pandas") || t.toLowerCase().includes("sql") || t.toLowerCase().includes("plotly")) || p.summary.toLowerCase().includes("analys") || p.summary.toLowerCase().includes("data"));
+            }
             
             skillsGridHTML = `
                 <div style="background: rgba(245, 158, 11, 0.1); padding: 0.85rem 1.1rem; border-radius: 10px; border-left: 4px solid #F59E0B; grid-column: span 2;">
@@ -184,6 +194,9 @@ class ResumeGeneratorEngine {
             roleTitle = "Leadership, HR Talent Sourcing & Event Operations Specialist";
             summaryText = "Proven Student Leader and Event Coordinator with demonstrated expertise managing 2,000+ attendee hackathons, campus community outreach for 500+ members at Hypedin, and administrative HR talent sourcing across 5 verified organizations.";
             filteredItems = internshipsData.filter(i => i.category === "leadership");
+            if (typeof projectsData !== "undefined") {
+                filteredProjects = projectsData.filter(p => p.featured || p.id === "rashil-ai-portfolio" || p.id === "intern-hub" || p.id === "courier-management-system");
+            }
             
             skillsGridHTML = `
                 <div style="background: rgba(168, 85, 247, 0.1); padding: 0.85rem 1.1rem; border-radius: 10px; border-left: 4px solid #A855F7; grid-column: span 2;">
@@ -201,6 +214,7 @@ class ResumeGeneratorEngine {
             `;
         } else {
             // Master Overview (All)
+            filteredProjects = typeof projectsData !== "undefined" ? projectsData : [];
             skillsGridHTML = `
                 <div style="background: rgba(15, 23, 42, 0.7); padding: 0.75rem 0.95rem; border-radius: 8px; border-left: 3px solid #38BDF8; border: 1px solid rgba(255,255,255,0.08);">
                     <strong style="color: #38BDF8;">AI & Machine Learning:</strong> Gemini API v2.5, RAG Vector Search (ChromaDB), OpenCV, Computer Vision, Deep Learning (Drone AI).
@@ -288,10 +302,10 @@ class ResumeGeneratorEngine {
             <!-- FEATURED PRODUCTION PROJECTS -->
             <div style="margin-bottom: 1.5rem;">
                 <h3 style="font-family: 'Orbitron', sans-serif; font-size: 0.95rem; font-weight: 800; color: #38BDF8; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.4rem; margin-bottom: 0.95rem; letter-spacing: 0.05em;">
-                    FEATURED PRODUCTION PROJECTS (${typeof projectsData !== "undefined" ? projectsData.length : 0} MAJOR SYSTEMS)
+                    RELEVANT PRODUCTION PROJECTS (${filteredProjects.length} RELEVANT SYSTEMS)
                 </h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 0.85rem;">
-                    ${typeof projectsData !== "undefined" ? projectsData.map(proj => `
+                    ${filteredProjects.map(proj => `
                         <div style="background: rgba(15, 23, 42, 0.6); padding: 0.9rem 1.1rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.06);">
                             <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; font-weight: 800; color: #FFFFFF; font-size: 0.88rem;">
                                 <span>${proj.title}</span>
@@ -303,7 +317,7 @@ class ResumeGeneratorEngine {
                                 <span style="color: #34D399;">GitHub: ${proj.github}</span>
                             </div>
                         </div>
-                    `).join("") : ""}
+                    `).join("")}
                 </div>
             </div>
 
