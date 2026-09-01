@@ -166,7 +166,7 @@ class VoiceNavEngine {
             feedback = "Navigating to Planet CHRONETHIS - 14 Verified Internships";
             targetSection = "journey";
         } else if (cmd.includes("project") || cmd.includes("work") || cmd.includes("code") || cmd.includes("creation")) {
-            feedback = "Navigating to Planet ARCANEX - 7 Production Projects";
+            feedback = "Navigating to Planet ARCANEX - 10 Production Projects";
             targetSection = "projects";
         } else if (cmd.includes("service") || cmd.includes("certificate") || cmd.includes("event") || cmd.includes("bulk")) {
             feedback = "Navigating to Planet CREDENX - Certificate and Event Services";

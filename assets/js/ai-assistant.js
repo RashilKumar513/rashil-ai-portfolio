@@ -182,7 +182,7 @@ class AIRecruiterAssistant {
                         <div class="ai-msg ai-msg-bot">
                             <div class="ai-msg-bubble">
                                 👋 <strong>Welcome Recruiter!</strong> I am Rashil's AI Candidate Representative.<br><br>
-                                I can answer questions about his <strong>12 internships</strong>, <strong>7.7 GPA</strong>, <strong>100% attendance</strong>, <strong>100% Certificate Services</strong>, or <strong>AI/MERN stack</strong>.
+                                I can answer questions about his <strong>14 internships</strong>, <strong>7.7 GPA</strong>, <strong>100% attendance</strong>, <strong>100% Certificate Services</strong>, or <strong>AI/MERN stack</strong>.
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@ class AIRecruiterAssistant {
                         <button class="prompt-pill" onclick="aiRecruiter.ask('whyHire')">💼 Why hire Rashil?</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('hr')">👥 HR & Talent Sourcing</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('services')">📜 Certificate Services</button>
-                        <button class="prompt-pill" onclick="aiRecruiter.ask('internships')">📊 12 Internships</button>
+                        <button class="prompt-pill" onclick="aiRecruiter.ask('internships')">📊 14 Internships</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('education')">🎓 Attendance & GPA</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('skills')">⚡ AI & Tech Stack</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('contact')">📧 Direct Outreach</button>
@@ -306,7 +306,7 @@ class AIRecruiterAssistant {
             return {
                 title: "Candidate Overview",
                 badge: "AI MATCH",
-                text: `<strong>Rashil Kumar Suresh Kumar</strong> is a 3rd-year B.Tech AI & DS student at Panimalar Engineering College with <strong>12 verified internships</strong>, a <strong>7.7 GPA</strong>, and <strong>100% verified attendance</strong>.<br><br>
+                text: `<strong>Rashil Kumar Suresh Kumar</strong> is a 3rd-year B.Tech AI & DS student at Panimalar Engineering College with <strong>14 verified internships</strong>, a <strong>7.7 GPA</strong>, and <strong>100% verified attendance</strong>.<br><br>
                 He specializes in Full Stack MERN development, Gemini API integrations, and RAG vector applications.`,
                 actions: [
                     { label: "Why Hire Rashil?", link: "javascript:askAIRecruiter('whyHire')" }
