@@ -4,6 +4,39 @@
 
 const projectsData = [
     {
+        id: "rashil-ai-portfolio",
+        title: "RASHIL.AI - Autonomous 3D Cyber Portfolio Engine",
+        category: "Full Stack",
+        featured: true,
+        summary: "World-First 3D Solar System Cyber Portfolio platform featuring AI Recruiter Assistant, Live Custom Tailored Resume Generator, Cyber Voice Command HUD, and 14 Verified Internships Vault.",
+        description: "Engineered a high-performance 3D Solar System web application for RASHIL.AI. Features interactive planet orbit mechanics, an embedded AI Recruiter Assistant, Live Role-Based Tailored Resume Generator with PDF export, Cyber Voice HUD with Web Speech API, CLI Terminal, and a 14-internship credential verification vault.",
+        technologies: ["JavaScript (ES6+)", "Three.js / 3D Canvas", "Web Speech API", "CSS3 Glassmorphism", "AI Recruiter Engine", "Tailwind CSS"],
+        image: "assets/images/portfolio-preview.svg",
+        github: "https://github.com/RashilKumar513/rashil-ai-portfolio",
+        demo: "https://github.com/RashilKumar513/rashil-ai-portfolio",
+        caseStudy: "pages/portfolio.html",
+        highlights: [
+            "World-First 3D Solar System Galaxy mode and interactive orbit navigation",
+            "Built-in AI Recruiter Assistant & Cyber Voice Command HUD with Speech Recognition",
+            "Live Role-Based Custom Resume Generator with PDF Export & Dark Cyber Glass preview",
+            "Cryptographic verification vault for 14 verified internships & 100% attendance recognition"
+        ],
+        preview: {
+            architecture: "3D Solar Engine -> AI Assistant Router -> Web Speech HUD -> Dynamic Render Engine & Resume Generator",
+            keyMetrics: [
+                { label: "3D Galaxy Mode", value: "8 Planets" },
+                { label: "Verified Records", value: "14 Internships" },
+                { label: "UI Innovation", value: "7 World-Firsts" }
+            ],
+            features: [
+                "Interactive 3D Solar System orbit navigation",
+                "Embedded AI Recruiter Knowledge Base & Chat Widget",
+                "Role-Based Custom Tailored Resume Generator & PDF export",
+                "Cyber Voice HUD panel with natural speech commands"
+            ]
+        }
+    },
+    {
         id: "hotel-reservation-system",
         title: "Hotel Reservation System",
         category: "Full Stack",

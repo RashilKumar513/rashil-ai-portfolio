@@ -65,7 +65,7 @@ function renderHero() {
                         <span class="pec-stat-lbl">VERIFIED INTERNSHIPS</span>
                     </div>
                     <div class="pec-stat-card hover-lift" data-spotlight>
-                        <span class="pec-stat-num" data-counter="9+">9+</span>
+                        <span class="pec-stat-num" data-counter="10+">10+</span>
                         <span class="pec-stat-lbl">PRODUCTION PROJECTS</span>
                     </div>
                     <div class="pec-stat-card hover-lift" data-spotlight>
