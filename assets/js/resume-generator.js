@@ -25,7 +25,7 @@ class ResumeGeneratorEngine {
         modal.style.padding = "1.5rem";
 
         modal.innerHTML = `
-            <div class="glass-featured" style="max-width: 950px; width: 100%; max-height: 92vh; overflow-y: auto; padding: 2.2rem; border-radius: 24px; border: 1px solid rgba(56, 189, 248, 0.45); background: #060B17; box-shadow: 0 0 70px rgba(56, 189, 248, 0.35);">
+            <div class="custom-resume-modal-body" style="max-width: 950px; width: 100%; max-height: 92vh; overflow-y: auto; padding: 2.2rem; border-radius: 24px; border: 1px solid rgba(56, 189, 248, 0.45); background: #060B17; box-shadow: 0 0 70px rgba(56, 189, 248, 0.35);">
                 
                 <!-- HEADER -->
                 <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 1.2rem; margin-bottom: 1.5rem;">

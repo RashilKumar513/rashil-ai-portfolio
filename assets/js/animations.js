@@ -337,6 +337,7 @@ function init3DTiltEffects() {
     document.addEventListener("mousemove", (e) => {
         const cards = document.querySelectorAll(tiltSelectors);
         cards.forEach(card => {
+            if (card.closest("#resume-generator-modal")) return;
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;

@@ -3684,22 +3684,22 @@ body.cursor-active .cyber-cursor-ring {
     box-shadow: 0 0 20px rgba(244, 63, 94, 0.7) !important;
 }
 
+/* Disable 3D tilt transform on Custom Resume Modal */
+#resume-generator-modal,
+#resume-generator-modal * {
+    transform: none !important;
+    perspective: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+}
+
 /* =====================================================
    HIGH-ATS SCORE PRINT & PDF EXPORT STYLESHEET
    Standardizes OCR parsing for Taleo, Workday, Greenhouse & Lever
 ===================================================== */
 @media print {
-    body * {
-        visibility: hidden !important;
-        background: transparent !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    #resume-generator-modal,
-    #resume-generator-modal #resume-preview-box,
-    #resume-generator-modal #resume-preview-box * {
-        visibility: visible !important;
+    body > *:not(#resume-generator-modal) {
+        display: none !important;
     }
 
     #resume-generator-modal {
@@ -3724,55 +3724,63 @@ body.cursor-active .cyber-cursor-ring {
         background: #FFFFFF !important;
         border: none !important;
         box-shadow: none !important;
+        max-height: none !important;
+        overflow: visible !important;
     }
 
     #resume-generator-modal button,
     #resume-generator-modal .filter-tab-btn,
-    #resume-generator-modal [onclick] {
+    #resume-generator-modal [onclick],
+    #resume-generator-modal > div > div:first-child,
+    #resume-generator-modal > div > div:nth-child(2),
+    #resume-generator-modal > div > div:last-child {
         display: none !important;
     }
 
     #resume-preview-box {
         background: #FFFFFF !important;
         color: #0F172A !important;
-        padding: 1.2cm !important;
+        padding: 0.8cm !important;
         border: none !important;
         font-family: 'Arial', 'Calibri', 'Helvetica', sans-serif !important;
-        font-size: 9.5pt !important;
-        line-height: 1.45 !important;
+        font-size: 9pt !important;
+        line-height: 1.4 !important;
         box-shadow: none !important;
     }
 
     #resume-preview-box h1 {
         color: #0F172A !important;
-        font-size: 18pt !important;
+        font-size: 16pt !important;
         font-family: 'Arial', sans-serif !important;
-        margin-bottom: 3pt !important;
+        margin-bottom: 2pt !important;
     }
 
     #resume-preview-box h2, #resume-preview-box h3 {
         color: #0F172A !important;
-        font-size: 10.5pt !important;
+        font-size: 10pt !important;
         font-family: 'Arial', sans-serif !important;
         border-bottom: 1.5pt solid #0F172A !important;
         padding-bottom: 2pt !important;
-        margin-top: 12pt !important;
-        margin-bottom: 5pt !important;
+        margin-top: 10pt !important;
+        margin-bottom: 4pt !important;
         text-transform: uppercase !important;
+        page-break-after: avoid !important;
+        break-after: avoid !important;
     }
 
     #resume-preview-box p, #resume-preview-box div, #resume-preview-box span, #resume-preview-box li {
         color: #1E293B !important;
     }
 
-    #resume-preview-box .ats-card, 
     #resume-preview-box div[style*="background"] {
         background: #FFFFFF !important;
         border: none !important;
         border-left: 2pt solid #0F172A !important;
-        padding: 0.3rem 0.5rem !important;
-        margin-bottom: 0.6rem !important;
+        padding: 0.2rem 0.4rem !important;
+        margin-bottom: 0.4rem !important;
         color: #0F172A !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
     }
 
     #resume-preview-box span[style*="color"],
