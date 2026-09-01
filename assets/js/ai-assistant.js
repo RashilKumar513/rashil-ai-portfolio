@@ -15,7 +15,7 @@ const AI_RECRUITER_KNOWLEDGE = {
         • <strong>Cross-Functional Operations:</strong> Practical experience in HR sourcing, talent acquisition, and digital project management.`,
         actions: [
             { label: "View Projects", link: "#projects" },
-            { label: "Download Resume", link: "assets/resume.pdf", external: true }
+            { label: "View Live Master Resume", link: "javascript:openCustomResume()" }
         ]
     },
     internships: {
