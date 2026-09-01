@@ -27,7 +27,7 @@ function renderHero() {
                 </div>
 
                 <p class="pec-tagline">
-                    FULL STACK & ARTIFICIAL INTELLIGENCE ENGINEER | 12 VERIFIED INTERNSHIPS
+                    FULL STACK & ARTIFICIAL INTELLIGENCE ENGINEER | 14 VERIFIED INTERNSHIPS
                 </p>
 
                 <!-- PEC Hacks Pill Action Buttons -->
@@ -235,7 +235,7 @@ function renderAbout() {
                             <tr>
                                 <td class="dim-cell"><strong>Practical Work Experience</strong></td>
                                 <td class="diff-standard">0 – 1 basic academic internships</td>
-                                <td class="diff-target"><strong>12 Verified Internships</strong> (7 Tech/AI + 5 Leadership/Ops)</td>
+                                <td class="diff-target"><strong>14 Verified Internships</strong> (8 Tech/AI + 6 Leadership/Ops)</td>
                             </tr>
                             <tr>
                                 <td class="dim-cell"><strong>Discipline & Punctuality</strong></td>
@@ -245,7 +245,7 @@ function renderAbout() {
                             <tr>
                                 <td class="dim-cell"><strong>Code Security & Architecture</strong></td>
                                 <td class="diff-standard">Unvalidated code quality</td>
-                                <td class="diff-target"><strong>OWASP Vulnerability Tested</strong> + 7+ Production Projects</td>
+                                <td class="diff-target"><strong>OWASP Vulnerability Tested</strong> + 10+ Production Projects</td>
                             </tr>
                             <tr>
                                 <td class="dim-cell"><strong>Business & Team Leadership</strong></td>
