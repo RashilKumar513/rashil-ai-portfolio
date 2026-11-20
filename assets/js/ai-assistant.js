@@ -8,7 +8,7 @@ const AI_RECRUITER_KNOWLEDGE = {
         title: "Why Hire Rashil Kumar Suresh Kumar?",
         badge: "TOP CANDIDATE SUMMARY",
         text: `<strong>Rashil is a rare high-yield candidate combining Full Stack Engineering, AI Integration, and HR Talent Sourcing experience.</strong><br><br>
-        • <strong>14 Verified Internships:</strong> Hands-on experience across full-stack development, AI model integration, and leadership.<br>
+        • <strong>17 Verified Internships:</strong> Hands-on experience across full-stack development, AI model integration, and leadership.<br>
         • <strong>100% Verified Attendance & 7.7 GPA:</strong> Proven extreme discipline, reliability, and academic consistency at Panimalar Engineering College.<br>
         • <strong>AI + MERN Stack Master:</strong> Expert in Gemini API, RAG vector stores (ChromaDB/Ollama), React, Node.js, Express, and MySQL/MongoDB.<br>
         • <strong>OWASP Security Trained:</strong> Every application is built with clean architecture, input validation, and security best practices.<br>
@@ -19,12 +19,12 @@ const AI_RECRUITER_KNOWLEDGE = {
         ]
     },
     internships: {
-        title: "14 Verified Internships Breakdown",
+        title: "17 Verified Internships Breakdown",
         badge: "WORK EXPERIENCE",
-        text: `<strong>Rashil has completed 14 internships spanning technical development, AI engineering, QA, and leadership:</strong><br><br>
-        • <strong>8 Technical / AI Roles:</strong> AI Engineering, Web Development (MERN), Python Automation, Database Architecture, and Android QA Testing.<br>
-        • <strong>6 Leadership & Operations Roles:</strong> AURONEX Community (Operation Team Lead), Talent Acquisition (HR), Community Management, Strategic Marketing, and Event Coordination.<br>
-        • <strong>Recent Roles:</strong> Operation Team Lead @ AURONEX & Data Analyst @ Beeskilled completed in 2026.<br>
+        text: `<strong>Rashil has completed 17 internships spanning technical development, AI engineering, QA, and leadership:</strong><br><br>
+        • <strong>10 Technical / AI Roles:</strong> AI Engineering, Pega Systems Architecture, Agentic AI, Web Development (MERN), Python Automation, Database Architecture, and Android QA Testing.<br>
+        • <strong>7 Leadership & Operations Roles:</strong> Head of Events & Experiences @ MentorCampus Foundation, AURONEX Community (Operation Team Lead), Talent Acquisition (HR), Community Management, Strategic Marketing, and Event Coordination.<br>
+        • <strong>Recent Roles:</strong> Head of Events & Experiences @ MentorCampus Foundation, Emerging Tech & Agentic AI @ Edunet (IBM SkillsBuild), Pega Architecture @ SmartBridge, and Operation Team Lead @ AURONEX.<br>
         • <strong>Proven Work Ethic:</strong> High adaptability across agile dev teams and remote/onsite workflows.`,
         actions: [
             { label: "Explore Experience Timeline", link: "#journey" }
@@ -68,14 +68,15 @@ const AI_RECRUITER_KNOWLEDGE = {
     },
     hr: {
         title: "Administration, Leadership & HR Operations Experience",
-        badge: "5 LEADERSHIP & OPS ROLES",
+        badge: "7 LEADERSHIP & OPS ROLES",
         text: `<strong>Rashil brings proven real-world experience in Operations Management, Student Leadership & Administration:</strong><br><br>
+        • 🌟 <strong>Head of Events & Experiences @ MentorCampus Foundation:</strong> Leading the planning and execution of student workshops, expert talks, hackathons, and educational summits across colleges.<br>
         • 💼 <strong>Administration Department Intern @ Renu Sharma Healthcare & Education Foundation:</strong> Managed daily cross-departmental operations using Google Workspace & MS Office. Organized 500+ administrative files with 98% filing accuracy and improved team collaboration efficiency by 40%.<br>
         • 🌐 <strong>Online Community Manager - Tamil Nadu @ Hypedin (Delhi):</strong> Built and managed active student communities across 5 platforms with 500+ members. Coordinated monthly events for 2,000+ student participants.<br>
         • 📢 <strong>Campus Ambassador & Marketing Executive @ InnoKnowvex, Shiksha Vertex & Xiartz:</strong> Led campus campaigns reaching 5,000+ students across 8 colleges, generated 200+ qualified leads, and executed 6+ workshops.<br>
-        • 👥 <strong>5 Leadership & Management Roles:</strong> Combines technical engineering capability with administrative operations, team leadership, and stakeholder communication skills.`,
+        • 👥 <strong>7 Leadership & Management Roles:</strong> Combines technical engineering capability with administrative operations, team leadership, and stakeholder communication skills.`,
         actions: [
-            { label: "Explore 14-Internship Vault", link: "#journey" },
+            { label: "Explore 17-Internship Vault", link: "#journey" },
             { label: "Contact Rashil Directly", link: "#contact" }
         ]
     },
@@ -182,7 +183,7 @@ class AIRecruiterAssistant {
                         <div class="ai-msg ai-msg-bot">
                             <div class="ai-msg-bubble">
                                 👋 <strong>Welcome Recruiter!</strong> I am Rashil's AI Candidate Representative.<br><br>
-                                I can answer questions about his <strong>14 internships</strong>, <strong>7.7 GPA</strong>, <strong>100% attendance</strong>, <strong>100% Certificate Services</strong>, or <strong>AI/MERN stack</strong>.
+                                I can answer questions about his <strong>17 internships</strong>, <strong>7.7 GPA</strong>, <strong>100% attendance</strong>, <strong>100% Certificate Services</strong>, or <strong>AI/MERN stack</strong>.
                             </div>
                         </div>
                     </div>
@@ -192,7 +193,7 @@ class AIRecruiterAssistant {
                         <button class="prompt-pill" onclick="aiRecruiter.ask('whyHire')">💼 Why hire Rashil?</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('hr')">👥 HR & Talent Sourcing</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('services')">📜 Certificate Services</button>
-                        <button class="prompt-pill" onclick="aiRecruiter.ask('internships')">📊 14 Internships</button>
+                        <button class="prompt-pill" onclick="aiRecruiter.ask('internships')">📊 17 Internships</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('education')">🎓 Attendance & GPA</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('skills')">⚡ AI & Tech Stack</button>
                         <button class="prompt-pill" onclick="aiRecruiter.ask('contact')">📧 Direct Outreach</button>
@@ -257,7 +258,7 @@ class AIRecruiterAssistant {
             case "whyHire": return "Why should I hire Rashil?";
             case "services": return "What 100% Best Quality Certificate Services does Rashil offer?";
             case "hr": return "What is his experience in HR & Talent Acquisition?";
-            case "internships": return "Tell me about his 14 internships.";
+            case "internships": return "Tell me about his 17 internships.";
             case "education": return "What is his GPA & attendance record?";
             case "skills": return "What is his technical & AI skill stack?";
             case "contact": return "How can I contact Rashil directly?";
@@ -306,7 +307,7 @@ class AIRecruiterAssistant {
             return {
                 title: "Candidate Overview",
                 badge: "AI MATCH",
-                text: `<strong>Rashil Kumar Suresh Kumar</strong> is a 3rd-year B.Tech AI & DS student at Panimalar Engineering College with <strong>14 verified internships</strong>, a <strong>7.7 GPA</strong>, and <strong>100% verified attendance</strong>.<br><br>
+                text: `<strong>Rashil Kumar Suresh Kumar</strong> is a 3rd-year B.Tech AI & DS student at Panimalar Engineering College with <strong>17 verified internships</strong>, a <strong>7.7 GPA</strong>, and <strong>100% verified attendance</strong>.<br><br>
                 He specializes in Full Stack MERN development, Gemini API integrations, and RAG vector applications.`,
                 actions: [
                     { label: "Why Hire Rashil?", link: "javascript:askAIRecruiter('whyHire')" }

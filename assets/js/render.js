@@ -27,7 +27,7 @@ function renderHero() {
                 </div>
 
                 <p class="pec-tagline">
-                    FULL STACK & ARTIFICIAL INTELLIGENCE ENGINEER | 14 VERIFIED INTERNSHIPS
+                    FULL STACK & ARTIFICIAL INTELLIGENCE ENGINEER | 17 VERIFIED INTERNSHIPS
                 </p>
 
                 <!-- PEC Hacks Pill Action Buttons -->
@@ -58,7 +58,7 @@ function renderHero() {
                 <!-- PEC Hacks Countdown / Stat Cards Grid -->
                 <div class="pec-stats-row">
                     <div class="pec-stat-card hover-lift" data-spotlight>
-                        <span class="pec-stat-num" data-counter="14">14</span>
+                        <span class="pec-stat-num" data-counter="17">17</span>
                         <span class="pec-stat-lbl">VERIFIED INTERNSHIPS</span>
                     </div>
                     <div class="pec-stat-card hover-lift" data-spotlight>
@@ -113,7 +113,7 @@ function renderAbout() {
                     </div>
                     
                     <div class="portrait-badge-bottom">
-                        <i data-lucide="award"></i> 14 Internships
+                        <i data-lucide="award"></i> 17 Internships
                     </div>
                 </div>
 
@@ -235,7 +235,7 @@ function renderAbout() {
                             <tr>
                                 <td class="dim-cell"><strong>Practical Work Experience</strong></td>
                                 <td class="diff-standard">0 – 1 basic academic internships</td>
-                                <td class="diff-target"><strong>14 Verified Internships</strong> (8 Tech/AI + 6 Leadership/Ops)</td>
+                                <td class="diff-target"><strong>17 Verified Internships</strong> (10 Tech/AI + 7 Leadership/Ops)</td>
                             </tr>
                             <tr>
                                 <td class="dim-cell"><strong>Discipline & Punctuality</strong></td>
@@ -602,7 +602,7 @@ function renderJourney() {
                     <span class="planet-section-label">JOURNEY · THE VERIFIED CREDENTIAL VAULT</span>
                 </div>
             </div>
-            <span class="pec-subtitle planet-tagline">14 VERIFIED INTERNSHIPS WITH CRYPTOGRAPHIC HASH & VERIFIED RECORDS</span>
+            <span class="pec-subtitle planet-tagline">17 VERIFIED INTERNSHIPS WITH CRYPTOGRAPHIC HASH & VERIFIED RECORDS</span>
             
             <!-- Category Filter Tabs for Verified Internship Vault -->
             <div class="project-filter-tabs flex-left-tabs">

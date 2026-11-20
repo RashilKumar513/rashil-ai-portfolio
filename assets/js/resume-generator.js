@@ -43,7 +43,7 @@ class ResumeGeneratorEngine {
                 <!-- ROLE FOCUS TABS -->
                 <div style="display: flex; gap: 0.6rem; flex-wrap: wrap; margin-bottom: 1.75rem;">
                     <button class="filter-tab-btn active" id="res-tab-all" onclick="resumeGenerator.filter('all')">
-                        ⭐ Full Master Resume (${typeof internshipsData !== 'undefined' ? internshipsData.length : 14} Verified Internships)
+                        ⭐ Full Master Resume (${typeof internshipsData !== 'undefined' ? internshipsData.length : 17} Verified Internships)
                     </button>
                     <button class="filter-tab-btn" id="res-tab-ai" onclick="resumeGenerator.filter('ai')">
                         🤖 AI, ML & RAG Vector Focus
@@ -120,7 +120,7 @@ class ResumeGeneratorEngine {
         let filteredItems = internshipsData;
         let filteredProjects = typeof projectsData !== "undefined" ? projectsData : [];
         let roleTitle = "AI & MERN Full-Stack Engineer";
-        let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 14 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
+        let summaryText = "High-yield, disciplined 3rd-Year B.Tech Artificial Intelligence & Data Science candidate combining technical engineering mastery with operational leadership. Proven track record across 17 verified internships, achieving 100% verified attendance and a 7.7 CGPA.";
         
         let skillsGridHTML = "";
 
@@ -131,8 +131,9 @@ class ResumeGeneratorEngine {
                 i.title.toLowerCase().includes("aiml") || 
                 i.title.toLowerCase().includes("data analyst") || 
                 i.title.toLowerCase().includes("ai & cloud") ||
+                i.title.toLowerCase().includes("agentic ai") ||
                 i.title.toLowerCase().includes("microsoft elevate") ||
-                i.skills.some(s => s.toLowerCase() === "object detection" || s.toLowerCase().includes("deep learning") || s.toLowerCase().includes("drone ai") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("ai cloud") || s.toLowerCase().includes("predictive modeling"))
+                i.skills.some(s => s.toLowerCase() === "object detection" || s.toLowerCase().includes("deep learning") || s.toLowerCase().includes("drone ai") || s.toLowerCase().includes("gemini") || s.toLowerCase().includes("ai cloud") || s.toLowerCase().includes("predictive modeling") || s.toLowerCase().includes("agentic ai") || s.toLowerCase().includes("ibm granite") || s.toLowerCase().includes("watsonx") || s.toLowerCase().includes("rag architecture"))
             ));
             if (typeof projectsData !== "undefined") {
                 filteredProjects = projectsData.filter(p => p.category === "AI / Cloud" || p.technologies.some(t => t.toLowerCase().includes("gemini") || t.toLowerCase().includes("rag") || t.toLowerCase().includes("opencv") || t.toLowerCase().includes("streamlit") || t.toLowerCase().includes("sentence transformers")));
@@ -156,7 +157,7 @@ class ResumeGeneratorEngine {
             roleTitle = "MERN Full-Stack & Web Security Specialist";
             summaryText = "Production-grade Full Stack Web Engineer specializing in React.js frontend performance, Node/Express microservices, MongoDB schemas, and OWASP Top 10 security standards. Developer behind 100% Best Quality automated certificate generation systems.";
             filteredItems = internshipsData.filter(i => i.category === "technical" && (
-                i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("android testing") || s.toLowerCase().includes("manual qa") || s.toLowerCase().includes("owasp") || s.toLowerCase().includes("express") || s.toLowerCase().includes("5s standards"))
+                i.skills.some(s => s.toLowerCase().includes("mern") || s.toLowerCase().includes("react") || s.toLowerCase().includes("android testing") || s.toLowerCase().includes("manual qa") || s.toLowerCase().includes("owasp") || s.toLowerCase().includes("express") || s.toLowerCase().includes("5s standards") || s.toLowerCase().includes("pega") || s.toLowerCase().includes("workflow") || s.toLowerCase().includes("system architecture"))
             ));
             if (typeof projectsData !== "undefined") {
                 filteredProjects = projectsData.filter(p => p.category === "Full Stack" || p.category === "Backend" || p.technologies.some(t => t.toLowerCase().includes("react") || t.toLowerCase().includes("node") || t.toLowerCase().includes("mern") || t.toLowerCase().includes("flask") || t.toLowerCase().includes("express") || t.toLowerCase().includes("three.js")));
@@ -255,7 +256,7 @@ class ResumeGeneratorEngine {
                     </div>
 
                     <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(56, 189, 248, 0.35); padding: 0.6rem 1.1rem; border-radius: 12px; font-size: 0.78rem; text-align: right; font-weight: 700; color: #E2E8F0; flex-shrink: 0;">
-                        <div>⭐ <strong style="color: #38BDF8;">${typeof internshipsData !== 'undefined' ? internshipsData.length : 14} Verified Internships</strong></div>
+                        <div>⭐ <strong style="color: #38BDF8;">${typeof internshipsData !== 'undefined' ? internshipsData.length : 17} Verified Internships</strong></div>
                         <div>🚀 <strong style="color: #A855F7;">${typeof projectsData !== 'undefined' ? projectsData.length : 10}+ Production Projects</strong></div>
                         <div>🏅 <strong style="color: #34D399;">100% Verified Attendance (7.7 CGPA)</strong></div>
                     </div>

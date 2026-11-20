@@ -1,9 +1,36 @@
 /* =====================================================
-   NEXUS Portfolio - Journey Data (All 14 Verified Internships)
+   NEXUS Portfolio - Journey Data (All 17 Verified Internships)
 ===================================================== */
 
 const journeyData = [
     // --- TECH & AI & MANAGEMENT INTERNSHIPS ---
+    {
+        year: "Oct 2026 – Present",
+        title: "Head of Events & Experiences",
+        role: "MentorCampus Foundation",
+        category: "Management",
+        description: "Leading the planning and execution of student workshops, expert talks, hackathons, and educational summits. Coordinating with mentors, department heads, and industry leaders to drive campus innovation and leadership development.",
+        tags: ["Event Management", "Hackathons & Summits", "Speaker Management", "Team Leadership", "Student Engagement"],
+        icon: "award"
+    },
+    {
+        year: "Oct 2026 – Nov 2026",
+        title: "Emerging Tech & Agentic AI Intern",
+        role: "Edunet Foundation / AICTE & IBM SkillsBuild",
+        category: "Tech",
+        description: "Engineered Generative AI & Agentic AI workflows with IBM Granite LLMs, built autonomous agents with watsonx orchestrate, developed Auto AI ML crop recommendation models on IBM Cloud, and executed circuits on IBM Quantum Platform.",
+        tags: ["Agentic AI", "IBM Granite LLM", "watsonx orchestrate", "RAG Architecture", "IBM Quantum"],
+        icon: "cpu"
+    },
+    {
+        year: "Aug 2026 – Sep 2026",
+        title: "Pega Systems Architecture Intern",
+        role: "SmartBridge (Sponsored by Pega)",
+        category: "Tech",
+        description: "Selected for the National Internship Program sponsored by Pega in collaboration with SmartBridge. Designed enterprise-grade workflow automation architectures, case life cycles, and cloud integrations on the Pega platform.",
+        tags: ["Pega Platform", "Enterprise Architecture", "Case Lifecycle Management", "Workflow Automation"],
+        icon: "code"
+    },
     {
         year: "Jul 2026 – Sep 2026",
         title: "Data Analyst Intern",

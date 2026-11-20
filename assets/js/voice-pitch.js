@@ -29,7 +29,7 @@ class AIVoicePitchEngine {
             // Cancel any pending speech synthesis
             this.synth.cancel();
 
-            const internshipCount = typeof internshipsData !== "undefined" ? internshipsData.length : 14;
+            const internshipCount = typeof internshipsData !== "undefined" ? internshipsData.length : 17;
             const projectCount = typeof projectsData !== "undefined" ? projectsData.length : 10;
 
             const pitchText = `Hello, and welcome to RASHIL.AI! I am Rashil Kumar Suresh Kumar, a 20-year-old Artificial Intelligence and Full Stack Engineer studying at Panimalar Engineering College. What drives me every day is building high-impact technology that actually solves real-world problems. Over the course of ${internshipCount} verified internships, ${projectCount} major production systems, and a 100 percent academic attendance record with a 7.7 CGPA, I have engineered Gemini 2.5 API vector search engines, computer vision drone algorithms, and secure OWASP web applications. Whether it is leading cross-functional teams, optimizing complex data pipelines, or designing immersive 3D digital platforms, I bring relentless discipline, speed, and production quality to everything I touch. Thank you for visiting my portfolio, and I look forward to bringing this same energy, innovation, and engineering leadership to your team today!`;

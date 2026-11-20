@@ -7,9 +7,9 @@ const profileData = {
     title: "AI & Full Stack Developer | 3rd Year B.Tech AI & Data Science",
     role: "Full Stack & AI Engineer",
     greeting: "Hello, I'm",
-    tagline: "3rd Year B.Tech student in Artificial Intelligence & Data Science at Panimalar Engineering College. 14 verified internships across Cybersecurity, MERN Stack, AI/Cloud, & Engineering.",
+    tagline: "3rd Year B.Tech student in Artificial Intelligence & Data Science at Panimalar Engineering College. 17 verified internships across Cybersecurity, MERN Stack, AI/Cloud, & Engineering.",
     bio: [
-        "I am a 3rd Year B.Tech student in Artificial Intelligence & Data Science (GPA: 7.7/10) at Panimalar Engineering College, passionate about building high-performance, production-grade applications with clean architecture and robust security. I bring practical experience from 14 verified internships across MERN stack development, AI/ML model integration, cybersecurity, and cloud technologies.",
+        "I am a 3rd Year B.Tech student in Artificial Intelligence & Data Science (GPA: 7.7/10) at Panimalar Engineering College, passionate about building high-performance, production-grade applications with clean architecture and robust security. I bring practical experience from 17 verified internships across MERN stack development, AI/ML model integration, cybersecurity, and cloud technologies.",
         "From engineering AI-powered study tools with Gemini API v2.5 to building Stripe-integrated MERN platforms with 99.9% reliability, I focus on solving complex real-world problems with scalable code, optimized databases, and intuitive user experiences."
     ],
     avatarText: "RK",
@@ -36,9 +36,9 @@ const profileData = {
     stats: [
         {
             icon: "award",
-            value: "14",
+            value: "17",
             title: "Verified Internships",
-            description: "Data Analyst, AI, MERN, QA & Ops"
+            description: "AI, Pega, MERN, Data & Event Leadership"
         },
         {
             icon: "folder-kanban",
@@ -101,10 +101,10 @@ const profileData = {
         },
         {
             icon: "award",
-            title: "14 Verified Industry Internships",
-            organization: "AI, MERN Stack, QA & Management",
+            title: "17 Verified Industry Internships",
+            organization: "AI, Pega, MERN Stack, QA & Management",
             year: "2024 – 2026",
-            description: "Successfully completed 14 hands-on internships across technical AI/ML engineering, web development, Android QA testing, and team leadership.",
+            description: "Successfully completed 17 hands-on internships across technical AI/ML engineering, Pega system architecture, web development, Android QA testing, and executive event leadership.",
             badge: "Multi-Domain Experience",
             color: "#60A5FA"
         },

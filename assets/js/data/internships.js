@@ -1,9 +1,51 @@
 /* =====================================================
-   RASHIL.AI - 14 Real Verified Internships Dataset
+   RASHIL.AI - 17 Real Verified Internships Dataset
    Sorted Chronologically: RECENT TO OLD
 ===================================================== */
 
 const internshipsData = [
+    {
+        id: "int-mentorcampus",
+        title: "Head of Events & Experiences",
+        organization: "MentorCampus Foundation",
+        category: "leadership",
+        period: "Oct 2026 – Present",
+        location: "Chennai, Tamil Nadu / Hybrid",
+        hash: "HASH#PEC-2026-MC15",
+        badge: "VERIFIED LEADERSHIP",
+        color: "#F43F5E",
+        skills: ["Event Planning", "Hackathons & Summits", "Speaker Management", "Team Leadership", "Student Engagement"],
+        description: "Leading the planning and execution of student workshops, expert talks, hackathons, and educational summits. Coordinating with mentors, department heads, and industry leaders to drive campus innovation and leadership development.",
+        status: "✔ VERIFIED RECORD"
+    },
+    {
+        id: "int-edunet-ibm-ai",
+        title: "Emerging Tech & Agentic AI Intern",
+        organization: "Edunet Foundation / AICTE & IBM SkillsBuild",
+        category: "technical",
+        period: "Oct 2026 – Nov 2026",
+        location: "IBM Cloud / AICTE",
+        hash: "HASH#PEC-2026-IBM16",
+        badge: "VERIFIED TECHNICAL",
+        color: "#06B6D4",
+        skills: ["Agentic AI", "IBM Granite LLM", "watsonx orchestrate", "RAG Architecture", "Watson Machine Learning", "IBM Quantum"],
+        description: "Engineered Generative AI & Agentic AI workflows with IBM Granite LLMs, built autonomous agents with watsonx orchestrate, developed Auto AI ML crop recommendation models on IBM Cloud, and executed circuits on IBM Quantum Platform.",
+        status: "✔ VERIFIED RECORD"
+    },
+    {
+        id: "int-smartbridge-pega",
+        title: "Pega Systems Architecture Intern",
+        organization: "SmartBridge (Sponsored by Pega)",
+        category: "technical",
+        period: "Aug 2026 – Sep 2026",
+        location: "Hyderabad / Remote",
+        hash: "HASH#PEC-2026-PGA17",
+        badge: "VERIFIED TECHNICAL",
+        color: "#3B82F6",
+        skills: ["Pega Platform", "Enterprise System Architecture", "Case Lifecycle Management", "Workflow Automation", "Low-Code Engineering"],
+        description: "Selected for the National Internship Program sponsored by Pega in collaboration with SmartBridge. Designed enterprise-grade workflow automation architectures, case life cycles, and cloud integrations on the Pega platform.",
+        status: "✔ VERIFIED RECORD"
+    },
     {
         id: "int-auronex",
         title: "Operation Team Lead Intern",
